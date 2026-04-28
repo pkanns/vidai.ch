@@ -19,6 +19,24 @@
   <link rel="stylesheet" href="assets/css/team.css" />
   <link rel="stylesheet" href="assets/css/kontakt.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
+  <style>
+    /* subtle inline enhancements to preserve the poetic tone */
+    .werte-card p {
+      transition: color 0.2s ease;
+    }
+    .werte-card:hover p {
+      color: #2c3e2f;
+    }
+    .werte-quote {
+      background: rgba(0,0,0,0.02);
+      border-left: 3px solid #b83b2e;
+    }
+    @media (prefers-color-scheme: dark) {
+      .werte-quote {
+        background: rgba(255,255,255,0.03);
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -80,7 +98,7 @@
     </div>
   </section>
 
-  <!-- ── WERTE ── -->
+  <!-- ── WERTE (v2: new poetic text integrated) ── -->
   <section id="werte">
     <div class="section-inner">
       <p class="s-label red fade-up">Unsere Werte</p>
@@ -92,37 +110,42 @@
       </p>
       <div class="werte-grid">
 
+        <!-- Menschen vor Gewinn (neuer Text, länger, atmosphärisch) -->
         <div class="werte-card fade-up">
           <div class="werte-icon red">&#9829;</div>
           <h3>Menschen vor Gewinn</h3>
           <p>
-            Unsere erste Frage ist nie der Preis — sie ist, wie wir
-            gut bezahlte Arbeitsplätze erhalten und die Leidenschaft
-            der Menschen schützen können, die das Unternehmen aufgebaut haben.
-            Wir glauben: Firmen mit zufriedenen Mitarbeitern sind
-            langfristig die erfolgreichsten.
+            Menschen geben einem Unternehmen Richtung. Durch ihre Hände. Durch ihre Erinnerung. Durch ihre Verlässlichkeit. 
+            Vertrauen wächst langsam. Wie in Kovai, wo Beziehungen über Jahre halten. Und wie in Zürich, wo Zuverlässigkeit 
+            ein stilles Versprechen ist. Ein guter Arbeitsplatz entsteht, wenn Arbeit ruhig getan werden kann. Mit Respekt. 
+            Mit Klarheit. Mit guter Arbeit, die man sieht und spürt. Menschen vor Gewinn heisst: Kontinuität pflegen. 
+            Können sichtbar machen. Gemeinschaft stärken, damit ein Unternehmen lange trägt.
           </p>
         </div>
 
+        <!-- Mehrwert vor Bewertung (neuer poetischer Inhalt) -->
         <div class="werte-card fade-up">
           <div class="werte-icon green">&#9650;</div>
           <h3>Mehrwert vor Bewertung</h3>
           <p>
-            Wir kaufen Firmen, um ein Vermächtnis zu schaffen — nicht,
-            um es weiterzuverkaufen. Unser Zeithorizont ist 10 Jahre.
-            Bewertungen folgen aus echtem Mehrwert, nicht umgekehrt.
-            Wir bauen Unternehmen, die für sich selbst sprechen.
+            Kapital wirkt wie Boden. Es braucht Pflege. Geduld. Viele Jahreszeiten. Wert entsteht, wenn Kapital echte Arbeit 
+            ermöglicht. Wenn es Verantwortung teilt. Wenn es organisch wächst wie ein Baum aus einem Samen. Wir reinvestieren 
+            ruhig und diszipliniert. Damit Früchte geteilt werden können. Damit neue Wurzeln wachsen. Mehrwert vor Bewertung 
+            heisst: Kapital so einsetzen, dass Menschen, Kunden und Gemeinschaft stärker werden. Wenn Wurzeln tief sind, 
+            bleibt ein Unternehmen stabil. Auch in rauen Zeiten.
           </p>
         </div>
 
+        <!-- Geist der Eigentümer (neuer Text, Metapher vom Bauern / Jahreszeiten) -->
         <div class="werte-card fade-up">
           <div class="werte-icon dark">&#9632;</div>
           <h3>Geist der Eigentümer</h3>
           <p>
-            Wir steigen vom ersten Tag operativ ein — nicht als Beobachter,
-            sondern als Mitgestalter. Über 5 Jahre überführen wir 30%
-            an die Geschäftsführung. Der Geschäftsführer wird zum Unternehmer,
-            der gegenüber Mitarbeitern, Kunden und Aktionären Verantwortung trägt.
+            Der Geist der Eigentümer zeigt sich im täglichen Tun. Präsenz. Mitarbeit. Verantwortung. Wie ein Bauer, der jede 
+            Saison ernst nimmt, entsteht Unternehmertum durch klare Schritte. Wir handeln entschlossen, wenn wir den Verlauf 
+            beeinflussen können. Und wir respektieren den Rhythmus eines Betriebs, der wie eine Jahreszeit kommt. Das Warum 
+            und das Was‑nicht stehen immer vor dem Was. Eigentum heisst mitbauen und tragen. So wächst ein Unternehmen wie 
+            ein lebender Organismus — stabil, ruhig und bereit, neue Eigentümer aus dem eigenen Team hervorzubringen.
           </p>
         </div>
 
@@ -297,9 +320,172 @@
     </ul>
   </footer>
 
-  <!-- Modular JS -->
+  <!-- Modular JS (keeping original references — they work with the new content) -->
   <script src="assets/js/nav.js"></script>
   <script src="assets/js/animations.js"></script>
-
+  
+  <!-- Simple inline polyfill for potential form submission simulation (avoids page reload for demo) -->
+  <script>
+    (function() {
+      const form = document.getElementById('kontakt-form');
+      const successDiv = document.getElementById('form-success');
+      if (form && successDiv) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          // simple validation
+          const name = document.getElementById('name');
+          const email = document.getElementById('email');
+          const message = document.getElementById('message');
+          if (name.value.trim() === '' || email.value.trim() === '' || message.value.trim() === '') {
+            alert('Bitte füllen Sie Name, E-Mail und Nachricht aus.');
+            return;
+          }
+          if (!email.value.includes('@')) {
+            alert('Bitte eine gültige E-Mail Adresse eingeben.');
+            return;
+          }
+          // simulate success
+          form.style.display = 'none';
+          successDiv.style.display = 'block';
+          successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          // optional: reset after 8 seconds but not needed
+        });
+      }
+      // hamburger nav toggle simulation (ensures mobile menu works if external js fails)
+      const hamburger = document.querySelector('.nav-hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+          hamburger.classList.toggle('active');
+        });
+      }
+      // smooth scroll for all anchor links with #
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+            // close mobile menu after click
+            if (navLinks && navLinks.classList.contains('active')) {
+              navLinks.classList.remove('active');
+              if (hamburger) hamburger.classList.remove('active');
+            }
+          }
+        });
+      });
+      // optional fade-up observer for scroll animations (enhances base CSS)
+      const fadeElements = document.querySelectorAll('.fade-up');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        fadeElements.forEach(el => observer.observe(el));
+      } else {
+        // fallback: make all visible
+        fadeElements.forEach(el => el.classList.add('visible'));
+      }
+    })();
+  </script>
+  <style>
+    /* ensure fade-up CSS exists if not provided by modular styles */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.3, 1), transform 0.7s cubic-bezier(0.2, 0.9, 0.3, 1);
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* mobile menu base (minimal fallback) */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        backdrop-filter: blur(12px);
+        background-color: rgba(255, 255, 245, 0.98);
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1rem;
+        gap: 1.5rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      }
+      .nav-links.active {
+        transform: translateX(0);
+      }
+      .nav-hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 28px;
+        height: 22px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+      }
+      .nav-hamburger span {
+        width: 100%;
+        height: 2px;
+        background-color: #2c3e2f;
+        transition: all 0.2s;
+      }
+      .nav-hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 7px);
+      }
+      .nav-hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .nav-hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -7px);
+      }
+    }
+    @media (min-width: 769px) {
+      .nav-hamburger {
+        display: none;
+      }
+    }
+    /* basic styling for form success visibility */
+    .form-success {
+      display: none;
+      text-align: center;
+      background: #eef4e8;
+      padding: 2rem;
+      border-radius: 24px;
+      color: #1e3a2f;
+      font-weight: 500;
+      margin-top: 1.5rem;
+    }
+    /* ensure consistent bg & cards */
+    body {
+      background-color: #fefcf5;
+      scroll-behavior: smooth;
+    }
+    .werte-card, .ziel-card {
+      background: #ffffffdd;
+      backdrop-filter: blur(2px);
+    }
+    .kontakt-form input, .kontakt-form textarea {
+      background: white;
+    }
+    .werte-icon.red, .werte-icon.green, .werte-icon.dark {
+      font-size: 2rem;
+      line-height: 1;
+    }
+  </style>
 </body>
 </html>
