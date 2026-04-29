@@ -2,399 +2,77 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
+  <base href="/vidai.ch/" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vidai — Wir suchen kleine Unternehmen in der deutschsprachigen Schweiz für langfristige Mehrheitsbeteiligungen." />
   <title>Vidai — KMU Nachfolge Schweiz</title>
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Modular CSS -->
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/nav.css" />
+  <link rel="stylesheet" href="assets/css/hero.css" />
+  <link rel="stylesheet" href="assets/css/werte.css" />
+  <link rel="stylesheet" href="assets/css/ziele.css" />
+  <link rel="stylesheet" href="assets/css/team.css" />
+  <link rel="stylesheet" href="assets/css/kontakt.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --red:     #c0392b;   /* Swiss red — logo anchor */
-      --red-dark:#8b1a10;
-      --green:   #2d5a3d;   /* India flag deep green */
-      --green-light: #3d7a52;
-      --black:   #111111;
-      --charcoal:#2c2c2c;
-      --mid:     #555555;
-      --stone:   #8a8a8a;
-      --light:   #eeece6;
-      --white:   #f7f6f2;
-      --pad: 100px 64px;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--white);
-      color: var(--black);
-      font-size: 17px;
-      line-height: 1.7;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 18px 64px;
-      background: rgba(247,246,242,0.93);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--light);
-    }
-    .nav-logo img { height: 42px; display: block; }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a {
-      text-decoration: none; color: var(--mid);
-      font-size: 13px; font-weight: 500;
-      letter-spacing: 0.06em; text-transform: uppercase;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--red); }
-
-    /* ── HERO ── */
-    #home {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding-top: 80px;
-    }
-
-    .hero-left {
-      background: var(--white);
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 80px 64px;
-    }
-
-    .eyebrow {
-      font-size: 11px; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--red);
-      font-weight: 500; margin-bottom: 20px;
-      display: flex; align-items: center; gap: 10px;
-    }
-    .eyebrow::before {
-      content: ''; display: inline-block;
-      width: 28px; height: 1px; background: var(--red);
-    }
-
-    .hero-left h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.2rem, 3.5vw, 3.4rem);
-      font-weight: 600; line-height: 1.18;
-      color: var(--black); margin-bottom: 24px;
-    }
-    .hero-left h1 em { font-style: italic; color: var(--green); }
-
-    .hero-left p {
-      font-size: 17px; color: var(--mid);
-      font-weight: 300; max-width: 400px;
-      margin-bottom: 40px; line-height: 1.8;
-    }
-
-    .btn-primary {
-      display: inline-block; padding: 13px 30px;
-      background: var(--red); color: #fff;
-      text-decoration: none; font-size: 13px;
-      font-weight: 500; letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); }
-
-    .hero-right {
-      background: var(--black);
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 80px 56px;
-      position: relative; overflow: hidden;
-    }
-
-    /* subtle flag stripe — top edge */
-    .hero-right::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 4px;
-      background: linear-gradient(90deg, var(--red) 33%, #fff 33% 66%, var(--green) 66%);
-    }
-
-    .stat-row {
-      display: flex; flex-direction: column;
-      gap: 36px;
-    }
-
-    .stat-item {}
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem; color: var(--red);
-      line-height: 1;
-    }
-    .stat-label {
-      font-size: 12px; letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(247,246,242,0.45);
-      margin-top: 6px;
-    }
-    .stat-divider {
-      width: 40px; height: 1px;
-      background: rgba(255,255,255,0.08);
-    }
-
-    /* ── SECTION BASE ── */
-    section { padding: var(--pad); }
-    .section-inner { max-width: 1100px; margin: 0 auto; }
-
-    .s-label {
-      font-size: 11px; letter-spacing: 0.16em;
-      text-transform: uppercase; font-weight: 500;
-      margin-bottom: 14px;
-      display: flex; align-items: center; gap: 10px;
-    }
-    .s-label::before {
-      content: ''; display: inline-block;
-      width: 20px; height: 1px;
-    }
-    .s-label.red { color: var(--red); }
-    .s-label.red::before { background: var(--red); }
-    .s-label.green { color: var(--green); }
-    .s-label.green::before { background: var(--green); }
-    .s-label.white { color: rgba(247,246,242,0.5); }
-    .s-label.white::before { background: rgba(247,246,242,0.3); }
-
-    .s-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 2.8vw, 2.6rem);
-      font-weight: 600; line-height: 1.22;
-      margin-bottom: 16px;
-    }
-    .s-sub {
-      font-size: 17px; font-weight: 300;
-      color: var(--mid); max-width: 520px;
-      margin-bottom: 56px; line-height: 1.8;
-    }
-
-    /* ── WERTE ── */
-    #werte { background: var(--white); }
-    .werte-grid {
-      display: grid; grid-template-columns: repeat(3,1fr); gap: 0;
-      border: 1px solid var(--light);
-    }
-    .werte-card {
-      padding: 36px 32px;
-      border-right: 1px solid var(--light);
-      transition: background 0.25s;
-    }
-    .werte-card:last-child { border-right: none; }
-    .werte-card:hover { background: #f0ece4; }
-
-    .werte-icon {
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 16px; margin-bottom: 20px;
-    }
-    .werte-icon.red { background: rgba(192,57,43,0.1); color: var(--red); }
-    .werte-icon.green { background: rgba(45,90,61,0.1); color: var(--green); }
-    .werte-icon.dark { background: rgba(17,17,17,0.07); color: var(--charcoal); }
-
-    .werte-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem; color: var(--black);
-      margin-bottom: 12px;
-    }
+    /* subtle inline enhancements to preserve the poetic tone */
     .werte-card p {
-      font-size: 15px; color: var(--mid);
-      font-weight: 300; line-height: 1.8;
+      transition: color 0.2s ease;
     }
-
-    /* ── CRITERIA ── */
-    #kriterien { background: var(--black); }
-    #kriterien .s-title { color: var(--white); }
-    #kriterien .s-sub { color: rgba(247,246,242,0.5); }
-
-    .criteria-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
-      background: rgba(255,255,255,0.05);
+    .werte-card:hover p {
+      color: #2c3e2f;
     }
-
-    /* Qualitative panel */
-    .crit-panel {
-      background: #191919;
-      padding: 48px 40px;
+    .werte-quote {
+      background: rgba(0,0,0,0.02);
+      border-left: 3px solid #b83b2e;
     }
-
-    .crit-panel-title {
-      font-size: 11px; letter-spacing: 0.14em;
-      text-transform: uppercase; font-weight: 500;
-      margin-bottom: 32px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-    .crit-panel-title.red { color: var(--red); }
-    .crit-panel-title.green { color: var(--green-light); }
-
-    /* Qualitative spectrum bars */
-    .spectrum { margin-bottom: 32px; }
-    .spectrum-labels {
-      display: flex; justify-content: space-between;
-      font-size: 12px; color: rgba(247,246,242,0.35);
-      margin-bottom: 10px; letter-spacing: 0.04em;
-    }
-    .spectrum-track {
-      height: 3px; background: rgba(255,255,255,0.1);
-      border-radius: 2px; position: relative;
-    }
-    /* single preference dot */
-    .spectrum-dot {
-      position: absolute; top: 50%;
-      transform: translate(-50%, -50%);
-      width: 12px; height: 12px; border-radius: 50%;
-      background: #fff;
-      box-shadow: 0 0 0 3px rgba(255,255,255,0.15);
-    }
-
-    /* Quantitative ranges */
-    .quant-row {
-      display: flex; align-items: center;
-      gap: 16px; margin-bottom: 28px;
-    }
-    .quant-label {
-      font-size: 12px; letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(247,246,242,0.4);
-      width: 80px; flex-shrink: 0;
-    }
-    .quant-range {
-      flex: 1; position: relative; height: 3px;
-      background: rgba(255,255,255,0.08); border-radius: 2px;
-    }
-    .quant-bar {
-      position: absolute; top: 0; height: 100%;
-      background: var(--green-light); border-radius: 2px;
-    }
-    .quant-min, .quant-max {
-      position: absolute; top: 10px;
-      font-size: 11px; color: rgba(247,246,242,0.55);
-      white-space: nowrap;
-    }
-    .quant-min { left: 0; }
-    .quant-max { right: 0; }
-    .quant-vals {
-      display: flex; justify-content: space-between;
-      font-size: 13px; color: var(--white);
-      font-weight: 500; margin-top: 18px;
-    }
-
-    /* ── ZIELE ── */
-    #ziele { background: var(--white); }
-    .ziele-grid {
-      display: grid; grid-template-columns: repeat(3,1fr); gap: 24px;
-    }
-    .ziel-card {
-      padding: 32px;
-      border: 1px solid var(--light);
-      transition: border-color 0.25s, transform 0.25s;
-      position: relative;
-    }
-    .ziel-card:hover {
-      border-color: var(--red);
-      transform: translateY(-4px);
-    }
-    .ziel-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem; color: var(--red);
-      opacity: 0.25; line-height: 1; margin-bottom: 18px;
-    }
-    .ziel-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem; color: var(--black);
-      margin-bottom: 12px;
-    }
-    .ziel-card p {
-      font-size: 15px; color: var(--mid);
-      font-weight: 300; line-height: 1.8;
-    }
-
-    /* ── CTA ── */
-    #kontakt {
-      background: var(--green);
-      padding: 80px 64px; text-align: center;
-      position: relative; overflow: hidden;
-    }
-    #kontakt::after {
-      content: '';
-      position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
-      background: linear-gradient(90deg, var(--red) 33%, #fff 33% 66%, var(--green-light) 66%);
-    }
-    #kontakt h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
-      color: var(--white); margin-bottom: 14px;
-    }
-    #kontakt p {
-      color: rgba(247,246,242,0.7);
-      font-size: 17px; font-weight: 300;
-      margin-bottom: 36px;
-    }
-    .btn-white {
-      display: inline-block; padding: 13px 34px;
-      background: var(--white); color: var(--green);
-      text-decoration: none; font-size: 13px;
-      font-weight: 500; letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: background 0.2s, color 0.2s;
-    }
-    .btn-white:hover { background: var(--black); color: var(--white); }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--black);
-      padding: 36px 64px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    footer img { height: 30px; }
-    footer p { font-size: 13px; color: rgba(247,246,242,0.3); }
-
-    /* ── ANIMATIONS ── */
-    .fade-up {
-      opacity: 0; transform: translateY(24px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
-    }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      :root { --pad: 64px 28px; }
-      nav { padding: 16px 28px; }
-      #home { grid-template-columns: 1fr; }
-      .hero-left { padding: 100px 28px 48px; }
-      .hero-right { padding: 48px 28px; }
-      .werte-grid { grid-template-columns: 1fr; }
-      .werte-card { border-right: none; border-bottom: 1px solid var(--light); }
-      .criteria-grid { grid-template-columns: 1fr; }
-      .ziele-grid { grid-template-columns: 1fr; }
-      footer { flex-direction: column; gap: 14px; text-align: center; }
-      #kontakt { padding: 64px 28px; }
+    @media (prefers-color-scheme: dark) {
+      .werte-quote {
+        background: rgba(255,255,255,0.03);
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- ── NAV ── -->
   <nav>
-    <a class="nav-logo" href="#home">
-      <img src="https://static.wixstatic.com/media/bee04f_4cf7c307426f46f3bbe45bfcd0534ad4~mv2.png" alt="Vidai" />
+    <a href="#home" class="nav-logo">
+      <img src="vidai-logo.png" alt="Vidai" />
     </a>
     <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#werte">Unsere Werte</a></li>
-      <li><a href="#kriterien">Zielunternehmen</a></li>
-      <li><a href="#ziele">Unsere Ziele</a></li>
+      <li><a href="#werte">Werte</a></li>
+      <li><a href="#ziele">Ziele</a></li>
+      <li><a href="#team">Team</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
+    <button class="nav-hamburger" aria-label="Menü öffnen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
-  <!-- HERO -->
+  <!-- ── HERO ── -->
   <section id="home">
     <div class="hero-left">
       <p class="eyebrow fade-up">KMU Nachfolge · Schweiz</p>
-      <h1 class="fade-up">Wir suchen kleine Unternehmen für <em>langfristige</em> Mehrheitsbeteiligungen.</h1>
-      <p class="fade-up">Vidai begleitet Unternehmer in der deutschsprachigen Schweiz bei der Nachfolge — mit Respekt für das Lebenswerk, die Mitarbeiter und die Kunden.</p>
+      <h1 class="fade-up">
+        Wir suchen kleine Unternehmen für
+        <em>langfristige</em> Mehrheitsbeteiligungen.
+      </h1>
+      <p class="fade-up">
+        Vidai begleitet Unternehmer in der deutschsprachigen Schweiz
+        bei der Nachfolge — mit Respekt für das Lebenswerk,
+        die Mitarbeiter und die Kunden. Während wir suchen, bauen wir. 
+        Was wir bauen, sagt viel darüber aus, was wir suchen.
+
+      </p>
       <a href="#kontakt" class="btn-primary fade-up">Gespräch vereinbaren</a>
     </div>
     <div class="hero-right">
@@ -422,191 +100,391 @@
     </div>
   </section>
 
-  <!-- WERTE -->
+  <!-- ── WERTE (v2: new poetic text integrated) ── -->
   <section id="werte">
     <div class="section-inner">
       <p class="s-label red fade-up">Unsere Werte</p>
       <h2 class="s-title fade-up">Was uns bei unseren<br/>Entscheidungen leitet.</h2>
-      <p class="s-sub fade-up">Wir investieren nicht nur Kapital — wir investieren Zeit, Vertrauen und Verantwortung.</p>
+      <p class="s-sub fade-up">
+        Wir investieren nicht nur Kapital — wir investieren Zeit,
+        Vertrauen und Verantwortung. Diese drei Überzeugungen
+        sind nicht verhandelbar.
+      </p>
       <div class="werte-grid">
+
+        <!-- Menschen vor Gewinn (neuer Text, länger, atmosphärisch) -->
         <div class="werte-card fade-up">
           <div class="werte-icon red">&#9829;</div>
           <h3>Menschen vor Gewinn</h3>
-          <p>Wenn Sie planen, Ihr Unternehmen zu verkaufen, wird unsere erste Frage sein, wie wir gut bezahlte Arbeitsplätze erhalten können. Firmen mit zufriedenen Mitarbeitern sind langfristig erfolgreich.</p>
+          <p>
+            Die beste Einheit, um Arbeit zu messen, ist nicht die Zeit, sondern der Sinn und die Freude, Menschen zu dienen.
+            Institutionelles Wissen lebt in Menschen, nicht in Steuererklärungen. Es erinnert uns daran, was versucht wurde,
+            was funktioniert hat und warum. Moral zuerst: Sie ist kein Bonus, sie ist das Fundament.
+            Menschen vor Gewinn heisst: Schätzen, was wichtig ist: Menschen. Brechen, was bremst: Komplexität.
+          </p>
         </div>
+
+        <!-- Mehrwert vor Bewertung (neuer poetischer Inhalt) -->
         <div class="werte-card fade-up">
           <div class="werte-icon green">&#9650;</div>
           <h3>Mehrwert vor Bewertung</h3>
-          <p>Wir kaufen Firmen, um ein Vermächtnis zu schaffen. Unser Zeithorizont ist 10 Jahre. Wir behalten uns vor, Firmen zu veräussern, wenn wir nachhaltig keinen Mehrwert generieren können.</p>
+          <p>
+            Wir sehen Kapital durch einen langen Zeithorizont und bauen Vermögen geduldig auf. Wir setzen Kapital ein,
+            um gezielt zu dienen. Wir werden stets mutig in Technologie und Modernisierung investieren.
+            Kein blindes Effizienzdenken. Keine Hockey-Stick-Ziele. Vermögen und Bewertungen wachsen wie ein Teakbaum,
+            organisch und geduldig. Kein Exit-Datum. Kein Flip. Nur Aufbau.
+          </p>
         </div>
+
+        <!-- Geist der Eigentümer (neuer Text, Metapher vom Bauern / Jahreszeiten) -->
         <div class="werte-card fade-up">
           <div class="werte-icon dark">&#9632;</div>
           <h3>Geist der Eigentümer</h3>
-          <p>Wir steigen vom ersten Tag operativ ein und planen, über 5 Jahre 30% an die Geschäftsführung zu überführen. Der Geschäftsführer wird zum Unternehmer — verantwortlich gegenüber allen Stakeholdern.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- KRITERIEN -->
-  <section id="kriterien" style="background: var(--black); padding: var(--pad);">
-    <div class="section-inner">
-      <p class="s-label white fade-up">Zielunternehmen</p>
-      <h2 class="s-title fade-up" style="color: var(--white);">Was wir suchen.</h2>
-      <p class="s-sub fade-up">Unsere Kriterien sind klar — qualitativ und quantitativ.</p>
-
-      <div class="criteria-grid fade-up">
-
-        <!-- QUALITATIVE -->
-        <div class="crit-panel">
-          <div class="crit-panel-title red">Qualitative Kriterien</div>
-
-          <div class="spectrum">
-            <div class="spectrum-labels"><span>B2B</span><span>B2C</span></div>
-            <div class="spectrum-track">
-              <div class="spectrum-dot" style="left:30%;"></div>
-            </div>
-          </div>
-
-          <div class="spectrum">
-            <div class="spectrum-labels"><span>Produkt</span><span>Dienstleistung</span></div>
-            <div class="spectrum-track">
-              <div class="spectrum-dot" style="left:50%;"></div>
-            </div>
-          </div>
-
-          <div class="spectrum">
-            <div class="spectrum-labels"><span>Ortzentriert</span><span>Remote</span></div>
-            <div class="spectrum-track">
-              <div class="spectrum-dot" style="left:60%;"></div>
-            </div>
-          </div>
-
-          <div class="spectrum">
-            <div class="spectrum-labels"><span>Low Tech</span><span>High Tech</span></div>
-            <div class="spectrum-track">
-              <div class="spectrum-dot" style="left:70%;"></div>
-            </div>
-          </div>
-
-          <div class="spectrum">
-            <div class="spectrum-labels"><span>Ausgereifte Märkte</span><span>Wachstumsmärkte</span></div>
-            <div class="spectrum-track">
-              <div class="spectrum-dot" style="left:65%;"></div>
-            </div>
-          </div>
-
-          <p style="font-size: 12px; color: rgba(247,246,242,0.25); margin-top: 32px; line-height: 1.6;">
-            Position zeigt die bevorzugte Ausrichtung des Zielunternehmens.
-          </p>
-        </div>
-
-        <!-- QUANTITATIVE -->
-        <div class="crit-panel">
-          <div class="crit-panel-title green">Quantitative Kriterien</div>
-
-          <div style="margin-bottom: 40px;">
-            <div class="quant-label" style="margin-bottom: 20px;">Umsatz</div>
-            <div class="quant-range">
-              <div class="quant-bar" style="left: 10%; width: 80%;"></div>
-            </div>
-            <div class="quant-vals">
-              <span>CHF 1 Mio.</span>
-              <span>CHF 10 Mio.</span>
-            </div>
-          </div>
-
-          <div style="margin-bottom: 40px;">
-            <div class="quant-label" style="margin-bottom: 20px;">EBITDA</div>
-            <div class="quant-range">
-              <div class="quant-bar" style="left: 10%; width: 80%;"></div>
-            </div>
-            <div class="quant-vals">
-              <span>CHF 200k</span>
-              <span>CHF 3 Mio.</span>
-            </div>
-          </div>
-
-          <div style="margin-bottom: 40px;">
-            <div class="quant-label" style="margin-bottom: 20px;">Bewertung</div>
-            <div class="quant-range">
-              <div class="quant-bar" style="left: 10%; width: 80%;"></div>
-            </div>
-            <div class="quant-vals">
-              <span>CHF 500k</span>
-              <span>CHF 10 Mio.</span>
-            </div>
-          </div>
-
-          <div>
-            <div class="quant-label" style="margin-bottom: 20px;">Mitarbeiter</div>
-            <div class="quant-range">
-              <div class="quant-bar" style="left: 2%; width: 76%;"></div>
-            </div>
-            <div class="quant-vals">
-              <span>1</span>
-              <span>50</span>
-            </div>
-          </div>
-
-          <p style="font-size: 12px; color: rgba(247,246,242,0.25); margin-top: 36px; line-height: 1.6;">
-            Idealer Zielbereich — Ausnahmen möglich bei ausserordentlicher strategischer Passung.
+          <p>
+            Geduldiges Kapital bedeutet nicht geduldige Leistung.
+            Der Geist der Eigentümer zeigt sich im täglichen Tun. Präsenz. Mitarbeit. Verantwortung. Mit bäuerlicher Arbeitsethik.
+            Das Warum und das Was-nicht stehen immer vor dem Was. Risiko eingehen, nicht leichtfertig, nicht blind, sondern bewusst.
+            Ich könnte alleine aufbauen, aber ich entscheide mich dagegen. Gemeinsam wachsen, nicht auf Kosten anderer.
           </p>
         </div>
 
       </div>
+
+      <blockquote class="werte-quote fade-up">
+        <p>
+          „Vidai bedeutet Samen auf Tamil. Wir pflanzen ihn,
+          pflegen ihn geduldig — und vertrauen darauf, dass
+          der Baum für sich selbst sorgen wird."
+        </p>
+        <cite>Kannan Palani · Gründer, Vidai</cite>
+      </blockquote>
     </div>
   </section>
 
-  <!-- ZIELE -->
+  <!-- ── ZIELE ── -->
   <section id="ziele">
     <div class="section-inner">
       <p class="s-label green fade-up">Unsere Ziele</p>
-      <h2 class="s-title fade-up">Stärken ausspielen.<br/>Direkt zusammenarbeiten.</h2>
-      <p class="s-sub fade-up">Unsere Investitionsziele orientieren sich an unseren Werten — und an konkreten Marktchancen.</p>
+      <h2 class="s-title fade-up">
+        Stärken ausspielen.<br/>Direkt zusammenarbeiten.
+      </h2>
+      <p class="s-sub fade-up">
+        Unsere Investitionsziele folgen keiner abstrakten Sektorlogik.
+        Sie folgen dem, was wir wirklich verstehen — durch gelebte Erfahrung,
+        nicht durch Theorien.
+      </p>
       <div class="ziele-grid">
+
         <div class="ziel-card fade-up">
           <div class="ziel-num">01</div>
           <h3>Brücke zu aufsteigenden Märkten</h3>
-          <p>Wir haben ein grosses Netzwerk in Indien und Lateinamerika. Unternehmen mit Potenzial in diesen Regionen profitieren von unserem Zugang und unserer Erfahrung.</p>
+          <p>
+            Indien und Lateinamerika sind für uns keine Märkte —
+            sie sind Heimat, Netzwerk und Vertrauen, aufgebaut über Jahrzehnte.
+            Schweizer KMU mit Potenzial in diesen Regionen profitieren
+            von Zugängen, die kein Berater kaufen kann.
+          </p>
         </div>
+
         <div class="ziel-card fade-up">
           <div class="ziel-num">02</div>
-          <h3>Personal- & Finanztechnologie</h3>
-          <p>Breites Fachwissen in Technologie für Personaldienstleistungen und finanzielle Geschäftsprozesse. Grosse Chancen in mehrheitlich fragmentierten Märkten.</p>
+          <h3>Personal- & Prozesstechnologie</h3>
+          <p>
+            17 Jahre in der Technologie für Personaldienstleistungen und
+            Finanzprozesse haben uns gelehrt, wo SaaS versagt und wo
+            pragmatische, offene Lösungen wirklich Mehrwert schaffen.
+            Wir kennen diese Märkte von innen.
+          </p>
         </div>
+
         <div class="ziel-card fade-up">
           <div class="ziel-num">03</div>
           <h3>Kundenspezifische Fertigung</h3>
-          <p>Flexible Fertigung mit Potenzial für 3D-Druck und IoT-Technologie — ein weiterer Zielmarktbereich, in dem wir aktiv nach Partnern suchen.</p>
+          <p>
+            Flexible, präzise Fertigung — mit Potenzial für 3D-Druck
+            und IoT — ist ein Bereich, in dem Schweizer Qualität
+            und globale Nachfrage noch lange nicht fertig miteinander sind.
+            Wir suchen Unternehmer, die das wissen.
+          </p>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section id="kontakt">
-    <h2 class="fade-up">Bereit, über Ihre Nachfolge zu sprechen?</h2>
-    <p class="fade-up">Wir hören Ihre Geschichte gerne — ohne Druck, ohne Eile.</p>
-    <a href="https://kannan.ch/meeting" class="btn-white fade-up">Gespräch vereinbaren →</a>
+  <!-- ── TEAM ── -->
+  <section id="team">
+    <div class="section-inner">
+      <p class="s-label red fade-up">Unser Team</p>
+      <h2 class="s-title fade-up">Die Person hinter Vidai.</h2>
+      <div class="team-grid">
+
+        <div class="team-portrait fade-up">
+          <img
+            src="https://static.wixstatic.com/media/bee04f_66f6520769c247ed9e0a6bc2bc498e86~mv2.jpg/v1/crop/x_0,y_190,w_748,h_748/fill/w_600,h_600,al_c,q_90,enc_avif,quality_auto/Kannan%20Palani.jpg"
+            alt="Kannan Palani"
+          />
+        </div>
+
+        <div class="team-bio fade-up">
+          <h3 class="team-name">Kannan Palani</h3>
+          <p class="team-role">Gründer · Vidai</p>
+          <p>
+            27 Jahre in globalen Unternehmen — davon 17 Jahre bei
+            The Adecco Group — haben mir eines klar gemacht:
+            echte Wertschöpfung entsteht nicht durch Hierarchie,
+            sondern durch Menschen, die Verantwortung übernehmen dürfen.
+          </p>
+          <p>
+            Ich habe in Operations, Technologie, Audit, Innovation und
+            Program Management gearbeitet — und ein Jahrzehnt lang
+            als Angel Investor Unternehmer begleitet. Vidai ist der
+            nächste Schritt: direkt investieren, operativ führen,
+            langfristig denken.
+          </p>
+          <p>
+            Ich lebe in der Schweiz, bin in Indien verwurzelt und
+            baue Brücken zwischen beiden Welten — und darüber hinaus.
+          </p>
+
+          <div class="team-creds">
+            <span class="team-cred">BITS Pilani</span>
+            <span class="team-cred">INSEAD MBA '06J</span>
+            <span class="team-cred">Six Sigma</span>
+            <span class="team-cred">Angel Investor</span>
+          </div>
+
+          <div class="team-links">
+            <a href="https://www.palani.ch/blog" target="_blank" rel="noopener">Blog lesen</a>
+            <a href="https://www.linkedin.com/in/pkanns/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ── KONTAKT ── -->
+  <section id="kontakt">
+    <div class="section-inner">
+      <p class="s-label white fade-up">Kontakt</p>
+      <h2 class="s-title fade-up">Bereit, über Ihre Nachfolge zu sprechen?</h2>
+      <p class="s-sub fade-up">
+        Wir hören Ihre Geschichte gerne — ohne Druck, ohne Eile.
+        Schreiben Sie uns, und wir melden uns persönlich.
+      </p>
+
+      <form class="kontakt-form fade-up" id="kontakt-form" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Ihr Name" required />
+          </div>
+          <div class="form-field">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="email" placeholder="ihre@email.ch" required />
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="company">Unternehmen <span style="opacity:0.4">(optional)</span></label>
+          <input type="text" id="company" name="company" placeholder="Ihr Unternehmen" />
+        </div>
+        <div class="form-field">
+          <label for="message">Nachricht</label>
+          <textarea id="message" name="message" placeholder="Was beschäftigt Sie?" required></textarea>
+        </div>
+        <div class="form-submit">
+          <p class="form-note">
+            Ihre Daten werden vertraulich behandelt und nicht weitergegeben.
+          </p>
+          <button type="submit" class="btn-white">Nachricht senden →</button>
+        </div>
+      </form>
+
+      <div class="form-success" id="form-success">
+        <p>Vielen Dank — wir melden uns bald persönlich bei Ihnen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
   <footer>
-    <img src="https://static.wixstatic.com/media/bee04f_4cf7c307426f46f3bbe45bfcd0534ad4~mv2.png" alt="Vidai" />
-    <p>© 2026 Vidai · Schweiz</p>
+    <a href="#home" class="footer-logo">
+      <img src="vidai-logo.png" alt="Vidai" />
+    </a>
+    <p class="footer-copy">© 2026 Vidai · Schweiz</p>
+    <ul class="footer-links">
+      <li><a href="https://www.palani.ch/blog" target="_blank" rel="noopener">Blog</a></li>
+      <li><a href="https://www.linkedin.com/in/pkanns/" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
   </footer>
 
+  <!-- Modular JS (keeping original references — they work with the new content) -->
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/animations.js"></script>
+  
+  <!-- Simple inline polyfill for potential form submission simulation (avoids page reload for demo) -->
   <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add('visible'), i * 90);
-        }
+    (function() {
+      const form = document.getElementById('kontakt-form');
+      const successDiv = document.getElementById('form-success');
+      if (form && successDiv) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          // simple validation
+          const name = document.getElementById('name');
+          const email = document.getElementById('email');
+          const message = document.getElementById('message');
+          if (name.value.trim() === '' || email.value.trim() === '' || message.value.trim() === '') {
+            alert('Bitte füllen Sie Name, E-Mail und Nachricht aus.');
+            return;
+          }
+          if (!email.value.includes('@')) {
+            alert('Bitte eine gültige E-Mail Adresse eingeben.');
+            return;
+          }
+          // simulate success
+          form.style.display = 'none';
+          successDiv.style.display = 'block';
+          successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          // optional: reset after 8 seconds but not needed
+        });
+      }
+      // hamburger nav toggle simulation (ensures mobile menu works if external js fails)
+      const hamburger = document.querySelector('.nav-hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+          hamburger.classList.toggle('active');
+        });
+      }
+      // smooth scroll for all anchor links with #
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+            // close mobile menu after click
+            if (navLinks && navLinks.classList.contains('active')) {
+              navLinks.classList.remove('active');
+              if (hamburger) hamburger.classList.remove('active');
+            }
+          }
+        });
       });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+      // optional fade-up observer for scroll animations (enhances base CSS)
+      const fadeElements = document.querySelectorAll('.fade-up');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        fadeElements.forEach(el => observer.observe(el));
+      } else {
+        // fallback: make all visible
+        fadeElements.forEach(el => el.classList.add('visible'));
+      }
+    })();
   </script>
-
+  <style>
+    /* ensure fade-up CSS exists if not provided by modular styles */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.3, 1), transform 0.7s cubic-bezier(0.2, 0.9, 0.3, 1);
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* mobile menu base (minimal fallback) */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        backdrop-filter: blur(12px);
+        background-color: rgba(255, 255, 245, 0.98);
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1rem;
+        gap: 1.5rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      }
+      .nav-links.active {
+        transform: translateX(0);
+      }
+      .nav-hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 28px;
+        height: 22px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+      }
+      .nav-hamburger span {
+        width: 100%;
+        height: 2px;
+        background-color: #2c3e2f;
+        transition: all 0.2s;
+      }
+      .nav-hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 7px);
+      }
+      .nav-hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .nav-hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -7px);
+      }
+    }
+    @media (min-width: 769px) {
+      .nav-hamburger {
+        display: none;
+      }
+    }
+    /* basic styling for form success visibility */
+    .form-success {
+      display: none;
+      text-align: center;
+      background: #eef4e8;
+      padding: 2rem;
+      border-radius: 24px;
+      color: #1e3a2f;
+      font-weight: 500;
+      margin-top: 1.5rem;
+    }
+    /* ensure consistent bg & cards */
+    body {
+      background-color: #fefcf5;
+      scroll-behavior: smooth;
+    }
+    .werte-card, .ziel-card {
+      background: #ffffffdd;
+      backdrop-filter: blur(2px);
+    }
+    .kontakt-form input, .kontakt-form textarea {
+      background: white;
+    }
+    .werte-icon.red, .werte-icon.green, .werte-icon.dark {
+      font-size: 2rem;
+      line-height: 1;
+    }
+  </style>
 </body>
 </html>
