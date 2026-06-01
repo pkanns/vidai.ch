@@ -122,6 +122,83 @@
         background: rgba(255,255,255,0.03);
       }
     }
+    /* ── Ziele v5 enhancements ── */
+    .ziele-criteria {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem 2.5rem;
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 0.5px solid rgba(0,0,0,0.1);
+    }
+    .ziele-criteria strong {
+      color: #1a1a1a;
+      font-weight: 500;
+      margin-right: 0.25rem;
+    }
+    .ziel-sector {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #2c3e2f;
+      margin-bottom: 0.4rem;
+    }
+    .ziel-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.75rem;
+    }
+    .ziel-tag {
+      font-size: 0.65rem;
+      background: rgba(44,62,47,0.07);
+      color: #2c3e2f;
+      padding: 0.2rem 0.55rem;
+      border-radius: 2px;
+    }
+    .ziele-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 0.5px solid rgba(0,0,0,0.1);
+    }
+    .ziele-cta h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 0.25rem;
+    }
+    .ziele-cta p {
+      font-size: 0.88rem;
+      color: #666;
+      margin: 0;
+    }
+    .ziele-mehr {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: #2c3e2f;
+      border: 0.5px solid #2c3e2f;
+      padding: 0.55rem 1.2rem;
+      border-radius: 2px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.15s, color 0.15s;
+    }
+    .ziele-mehr:hover {
+      background: #2c3e2f;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -250,51 +327,74 @@
   <!-- ── ZIELE ── -->
   <section id="ziele">
     <div class="section-inner">
-      <p class="s-label green fade-up">Unsere Ziele</p>
-      <h2 class="s-title fade-up">
-        Stärken ausspielen.<br/>Direkt zusammenarbeiten.
-      </h2>
+      <p class="s-label green fade-up">Unsere Ziele · Käuferprofil</p>
+      <h2 class="s-title fade-up">Felder, in denen wir <em>gerne</em> arbeiten.</h2>
       <p class="s-sub fade-up">
-        Unsere Investitionsziele folgen keiner abstrakten Sektorlogik.
-        Sie folgen dem, was wir wirklich verstehen — durch gelebte Erfahrung,
-        nicht durch Theorien.
+        Wir suchen nicht das perfekte Unternehmen — wir suchen das richtige.
+        Eines, das Substanz hat, Kontinuität verdient und in guten Händen weiterblühen kann.
       </p>
-      <div class="ziele-grid">
 
+      <!-- Criteria strip -->
+      <div class="ziele-criteria fade-up">
+        <span><strong>Umsatz</strong> CHF 1–10 Mio.</span>
+        <span><strong>EBITDA</strong> &gt; CHF 200k</span>
+        <span><strong>Mitarbeitende</strong> 5–50</span>
+        <span><strong>Standort</strong> Deutschschweiz</span>
+      </div>
+
+      <!-- Four field cards -->
+      <div class="ziele-grid">
         <div class="ziel-card fade-up">
           <div class="ziel-num">01</div>
+          <div class="ziel-sector">IT Produkte</div>
           <h3>Brücke zu aufsteigenden Märkten</h3>
-          <p>
-            Indien und Lateinamerika sind für uns keine Märkte —
-            sie sind Heimat, Netzwerk und Vertrauen, aufgebaut über Jahrzehnte.
-            Schweizer KMU mit Potenzial in diesen Regionen profitieren
-            von Zugängen, die kein Berater kaufen kann.
-          </p>
+          <div class="ziel-tags">
+            <span class="ziel-tag">IT / Software</span>
+            <span class="ziel-tag">KMU-Software</span>
+            <span class="ziel-tag">Dienstleistung</span>
+          </div>
         </div>
-
         <div class="ziel-card fade-up">
           <div class="ziel-num">02</div>
-          <h3>Personal- & Prozesstechnologie</h3>
-          <p>
-            17 Jahre in der Technologie für Personaldienstleistungen und
-            Finanzprozesse haben uns gelehrt, wo SaaS versagt und wo
-            pragmatische, offene Lösungen wirklich Mehrwert schaffen.
-            Wir kennen diese Märkte von innen.
-          </p>
+          <div class="ziel-sector">IT Services</div>
+          <h3>Personal- &amp; Prozesstechnologie</h3>
+          <div class="ziel-tags">
+            <span class="ziel-tag">Beratung</span>
+            <span class="ziel-tag">Unternehmensberatung</span>
+            <span class="ziel-tag">Implementierung</span>
+          </div>
         </div>
-
         <div class="ziel-card fade-up">
           <div class="ziel-num">03</div>
-          <h3>Kundenspezifische Fertigung</h3>
-          <p>
-            Flexible, präzise Fertigung — mit Potenzial für 3D-Druck
-            und IoT — ist ein Bereich, in dem Schweizer Qualität
-            und globale Nachfrage noch lange nicht fertig miteinander sind.
-            Wir suchen Unternehmer, die das wissen.
-          </p>
+          <div class="ziel-sector">Business Services</div>
+          <h3>Abonnementmodelle &amp; Finanz</h3>
+          <div class="ziel-tags">
+            <span class="ziel-tag">Personalvermittlung</span>
+            <span class="ziel-tag">Finanzdienstleistungen</span>
+            <span class="ziel-tag">Marketing</span>
+          </div>
         </div>
-
+        <div class="ziel-card fade-up">
+          <div class="ziel-num">04</div>
+          <div class="ziel-sector">Last Mile Services</div>
+          <h3>Kundenspezifische Fertigung</h3>
+          <div class="ziel-tags">
+            <span class="ziel-tag">Handel</span>
+            <span class="ziel-tag">Logistik</span>
+            <span class="ziel-tag">Import / Export</span>
+          </div>
+        </div>
       </div>
+
+      <!-- Teaser CTA -->
+      <div class="ziele-cta fade-up">
+        <div>
+          <h3>Was genau suchen wir — und warum?</h3>
+          <p>Vier Felder, klare Kriterien, echte Absicht. Kein Exit-Datum.</p>
+        </div>
+        <a href="ziele_v5.html" class="ziele-mehr">Mehr erfahren →</a>
+      </div>
+
     </div>
   </section>
 

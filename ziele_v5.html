@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Käuferprofil — Vidai</title>
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Fonts — same as index.html -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Modular CSS — same as index.html -->
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/nav.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
+
+  <style>
+    /* ── PAGE VARS (mirrors base.css assumptions) ── */
+    :root {
+      --ink:    #1a1a18;
+      --muted:  #6b6b60;
+      --rule:   #e0ddd6;
+      --bg:     #fefcf5;
+      --white:  #ffffff;
+      --red:    #b83b2e;
+      --green:  #2c3e2f;
+      --tag-bg: #edeae3;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    /* ── HERO ── */
+    .z-hero {
+      padding: 5rem 4rem 3rem;
+      max-width: 860px;
+    }
+    .z-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1.2rem;
+    }
+    .z-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.8vw, 3rem);
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 1.2rem;
+    }
+    .z-hero h1 em {
+      font-style: italic;
+      font-weight: 400;
+    }
+    .z-hero-sub {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--muted);
+      max-width: 580px;
+    }
+
+    /* ── TWO COLUMN LAYOUT ── */
+    .z-body {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 0;
+      margin: 3rem 4rem 0;
+      border-top: 2px solid var(--ink);
+      align-items: start;
+    }
+
+    /* ── LEFT: FIELDS ── */
+    .z-fields {
+      border-right: 1px solid var(--rule);
+      padding-right: 3rem;
+    }
+
+    .z-col-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 1.4rem 0 1.2rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .z-field {
+      padding: 2.2rem 0;
+      border-bottom: 1px solid var(--rule);
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+    .z-field.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .z-field-top {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 0.6rem;
+    }
+    .z-num {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+    .z-skill {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    .z-field h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--ink);
+      margin-bottom: 0.65rem;
+    }
+    .z-field-body {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .z-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+    .z-tag {
+      font-size: 0.7rem;
+      background: var(--tag-bg);
+      color: var(--ink);
+      padding: 0.25rem 0.65rem;
+      border-radius: 2px;
+    }
+
+    /* conviction block */
+    .z-conviction {
+      margin-top: 0;
+      background: var(--ink);
+      color: var(--white);
+      padding: 2.5rem 3rem 2.5rem 0;
+      border-bottom: 1px solid #333;
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+    .z-conviction.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .z-conviction-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 0.75rem;
+    }
+    .z-conviction h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.8rem;
+    }
+    .z-conviction p {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.62);
+      margin-bottom: 1rem;
+    }
+    .z-conviction .z-tags .z-tag {
+      background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* ── RIGHT: CRITERIA ── */
+    .z-criteria {
+      padding-left: 3rem;
+      position: sticky;
+      top: 72px;
+    }
+
+    .z-criteria .z-col-label {
+      padding-right: 0;
+    }
+
+    .z-crit-section {
+      padding: 1.8rem 0;
+      border-bottom: 1px solid var(--rule);
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+    .z-crit-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .z-crit-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .z-crit-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--rule);
+      gap: 1rem;
+    }
+    .z-crit-row:last-child { border-bottom: none; }
+    .z-cr-label {
+      font-size: 0.82rem;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+    .z-cr-value {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--ink);
+      text-align: right;
+    }
+
+    .z-qual-item {
+      display: flex;
+      gap: 0.75rem;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: flex-start;
+    }
+    .z-qual-item:last-child { border-bottom: none; }
+    .z-qual-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+      margin-top: 0.45rem;
+    }
+    .z-qual-dot.red { background: var(--red); }
+    .z-qual-text {
+      font-size: 0.82rem;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+    .z-qual-text strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .z-intent {
+      background: var(--ink);
+      color: var(--white);
+      padding: 1.5rem;
+      margin-top: 1.8rem;
+    }
+    .z-intent p {
+      font-size: 0.82rem;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 0.8rem;
+    }
+    .z-intent p:last-child { margin-bottom: 0; }
+    .z-intent strong {
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    /* ── CTA ── */
+    .z-cta {
+      margin: 4rem 4rem 5rem;
+      padding: 3rem 3.5rem;
+      background: var(--ink);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .z-cta h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .z-cta p { font-size: 0.88rem; opacity: 0.6; line-height: 1.6; }
+    .z-cta-btn {
+      flex-shrink: 0;
+      display: inline-block;
+      background: var(--white);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.9rem 2rem;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .z-cta-btn:hover { background: var(--green); color: var(--white); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .z-hero, .z-cta { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .z-body { grid-template-columns: 1fr; margin: 2rem 1.5rem 0; }
+      .z-fields { border-right: none; padding-right: 0; }
+      .z-criteria { position: static; padding-left: 0; border-top: 2px solid var(--ink); margin-top: 2rem; }
+      .z-conviction { padding-right: 0; }
+      .z-cta { flex-direction: column; align-items: flex-start; margin: 2rem 1.5rem 3rem; }
+    }
+
+    /* fade-up animation */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.2,0.9,0.3,1), transform 0.7s cubic-bezier(0.2,0.9,0.3,1);
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV — reuses nav.css from main site -->
+  <nav>
+    <a href="https://www.vidai.ch" class="nav-logo">
+      <img src="vidai-logo.png" alt="Vidai" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="https://www.vidai.ch/#werte">Werte</a></li>
+      <li><a href="#ziele">Ziele</a></li>
+      <li><a href="https://www.vidai.ch/#team">Team</a></li>
+      <li><a href="https://www.vidai.ch/#kontakt">Kontakt</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <div class="z-hero" id="ziele">
+    <p class="z-eyebrow fade-up">Käuferprofil · Vidai</p>
+    <h1 class="fade-up">Felder, in denen wir <em>wirklich</em> arbeiten können.</h1>
+    <p class="z-hero-sub fade-up">
+      Ein transparentes Käuferprofil nach Schweizer Nachfolgestandard.
+      Jedes Feld entspricht einer konkreten Fähigkeit,
+      aufgebaut über Jahre. Was wir bauen, zeigt, was wir verstehen —
+      und welche Unternehmen wir wirklich führen können.
+    </p>
+  </div>
+
+  <!-- TWO COLUMN BODY -->
+  <div class="z-body">
+
+    <!-- LEFT: FIELDS -->
+    <div class="z-fields">
+      <p class="z-col-label">Tätigkeitsfelder</p>
+
+      <!-- 01 -->
+      <div class="z-field">
+        <div class="z-field-top">
+          <span class="z-num">01</span>
+          <span class="z-skill">Software · Langfristiger Aufbau</span>
+        </div>
+        <h2>IT Produkte</h2>
+        <p class="z-field-body">
+          Nischen-Technologieprodukte mit starker Kundenbasis.
+          17 Jahre Erfahrung in Technologie und Prozessgestaltung,
+          kombiniert mit dem aktiven Aufbau eigener Lösungen heute,
+          erlauben eine Beurteilung von innen: was funktioniert,
+          was skaliert, was behutsam ersetzt werden muss.
+        </p>
+        <div class="z-tags">
+          <span class="z-tag">KMU-Software</span>
+          <span class="z-tag">Immobiliensoftware</span>
+          <span class="z-tag">Behördensoftware</span>
+          <span class="z-tag">Individualsoftware</span>
+          <span class="z-tag">Softwarelizenzen</span>
+          <span class="z-tag">Prospecting to Cash</span>
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <div class="z-field">
+        <div class="z-field-top">
+          <span class="z-num">02</span>
+          <span class="z-skill">Services · Operative Tiefe</span>
+        </div>
+        <h2>IT Services</h2>
+        <p class="z-field-body">
+          Lieferung und Beziehung als Geschäftsmodell.
+          Junge, remote arbeitende Talente aus Indien und Lateinamerika
+          ermöglichen Servicequalität, die für kleine Schweizer KMU
+          sonst nicht erreichbar wäre. Operative Tiefe von innen.
+        </p>
+        <div class="z-tags">
+          <span class="z-tag">Implementierung</span>
+          <span class="z-tag">Testing</span>
+          <span class="z-tag">IT-Support</span>
+          <span class="z-tag">Web-Marketing</span>
+          <span class="z-tag">Cross-Cultural Coaching</span>
+          <span class="z-tag">Ecommerce</span>
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="z-field">
+        <div class="z-field-top">
+          <span class="z-num">03</span>
+          <span class="z-skill">Matching · Netzwerk und Erfahrung</span>
+        </div>
+        <h2>Business Services</h2>
+        <p class="z-field-body">
+          Prozesse, die von aussen einfach wirken
+          und von innen Erfahrung verlangen.
+          Jahrzehnte in der Personalvermittlung und als Angel Investor
+          haben ein Gespür dafür geschärft, welche Verbindungen tragen
+          und welche nur auf dem Papier stimmen.
+        </p>
+        <div class="z-tags">
+          <span class="z-tag">Personalvermittlung</span>
+          <span class="z-tag">Lohnabrechnung</span>
+          <span class="z-tag">Preisvergleich</span>
+          <span class="z-tag">Versicherungen</span>
+          <span class="z-tag">Finanzdienstleistungen</span>
+          <span class="z-tag">Abonnementmodelle</span>
+        </div>
+      </div>
+
+      <!-- 04 -->
+      <div class="z-field">
+        <div class="z-field-top">
+          <span class="z-num">04</span>
+          <span class="z-skill">Import · Gelebtes Netzwerk</span>
+        </div>
+        <h2>Last Mile Services</h2>
+        <p class="z-field-body">
+          Physischer Warenfluss mit kulturellem Kontext.
+          Coimbatore, das industrielle Herz Südindiens, ist Heimat.
+          Schweizer Kapital, das lokal in Indien investiert
+          und Arbeitsplätze schafft, ist kein Widerspruch. Es ist das Modell.
+          Für KMU, die einen echten Markteintritt in Indien suchen:
+          lokale Präsenz, nicht nur Kontakte.
+        </p>
+        <div class="z-tags">
+          <span class="z-tag">Import und Export</span>
+          <span class="z-tag">Logistik und Lagerung</span>
+          <span class="z-tag">Ecommerce</span>
+          <span class="z-tag">Reselling</span>
+          <span class="z-tag">Diaspora-Versorgung</span>
+          <span class="z-tag">Lebensmittel und Medikamente</span>
+          <span class="z-tag">Pumpen und Kompressoren</span>
+          <span class="z-tag">Gussteile und Hydraulik</span>
+          <span class="z-tag">Markteintritt Indien</span>
+          <span class="z-tag">Lokale Jobschaffung</span>
+        </div>
+      </div>
+
+      <!-- CONVICTION -->
+      <div class="z-conviction">
+        <div class="z-conviction-label">Überzeugung</div>
+        <h2>Daten als Instrument des Wandels</h2>
+        <p>
+          Dies ist keine Sektorpräferenz. Es ist eine Überzeugung.
+          Mobilitätswandel, digitale Souveränität, politische Transparenz,
+          dynamische Preisgestaltung, Steuer- und Abrechnungsprozesse.
+          Felder, in denen Daten nicht nur Geschäftsmodelle antreiben,
+          sondern echten gesellschaftlichen Wandel ermöglichen.
+          Unternehmen in diesen Bereichen finden in Vidai einen Eigentümer,
+          der das Warum versteht und den langen Zeithorizont mitbringt.
+        </p>
+        <div class="z-tags">
+          <span class="z-tag">Mobilitätswandel</span>
+          <span class="z-tag">Digitale Souveränität</span>
+          <span class="z-tag">Politische Transparenz</span>
+          <span class="z-tag">Dynamische Preisgestaltung</span>
+          <span class="z-tag">Steuer- und Abrechnungsprozesse</span>
+        </div>
+      </div>
+
+    </div><!-- /fields -->
+
+    <!-- RIGHT: CRITERIA -->
+    <div class="z-criteria">
+      <p class="z-col-label">Käuferprofil · Kriterien</p>
+
+      <div class="z-crit-section">
+        <h3>Grösse und Struktur</h3>
+        <div class="z-crit-row">
+          <span class="z-cr-label">Mitarbeitende</span>
+          <span class="z-cr-value">5 bis 50</span>
+        </div>
+        <div class="z-crit-row">
+          <span class="z-cr-label">Umsatz</span>
+          <span class="z-cr-value">CHF 1 bis 10 Mio.</span>
+        </div>
+        <div class="z-crit-row">
+          <span class="z-cr-label">EBITDA</span>
+          <span class="z-cr-value">&gt; CHF 200k</span>
+        </div>
+        <div class="z-crit-row">
+          <span class="z-cr-label">Profitabilität</span>
+          <span class="z-cr-value">EBIT positiv</span>
+        </div>
+        <div class="z-crit-row">
+          <span class="z-cr-label">Unternehmensphase</span>
+          <span class="z-cr-value">Etablierung / Reife</span>
+        </div>
+        <div class="z-crit-row">
+          <span class="z-cr-label">Rechtsform</span>
+          <span class="z-cr-value">AG / GmbH</span>
+        </div>
+        <div class="z-crit-row">
+          <span class="z-cr-label">Standort</span>
+          <span class="z-cr-value">Deutschschweiz</span>
+        </div>
+        <div class="z-crit-row">
+          <span class="z-cr-label">Marktgebiet</span>
+          <span class="z-cr-value">Schweiz / DACH</span>
+        </div>
+        <div class="z-crit-row">
+          <span class="z-cr-label">Beteiligungsform</span>
+          <span class="z-cr-value">Mehrheit</span>
+        </div>
+      </div>
+
+      <div class="z-crit-section">
+        <h3>Charakter des Unternehmens</h3>
+        <div class="z-qual-item">
+          <span class="z-qual-dot"></span>
+          <span class="z-qual-text"><strong>Eigentümergeführt.</strong> Entscheidungen liegen bei einer Person, nicht bei einem Komitee.</span>
+        </div>
+        <div class="z-qual-item">
+          <span class="z-qual-dot"></span>
+          <span class="z-qual-text"><strong>Langjährige Eigentümerschaft.</strong> Je länger aufgebaut, desto mehr institutionelles Wissen steckt drin.</span>
+        </div>
+        <div class="z-qual-item">
+          <span class="z-qual-dot"></span>
+          <span class="z-qual-text"><strong>Stabiler Kundenstamm.</strong> Wiederkehrende Beziehungen, keine reinen Projektabhängigkeiten.</span>
+        </div>
+        <div class="z-qual-item">
+          <span class="z-qual-dot"></span>
+          <span class="z-qual-text"><strong>Nachfolge offen.</strong> Der Eigentümer ist bereit loszulassen, aber nicht an jeden.</span>
+        </div>
+        <div class="z-qual-item">
+          <span class="z-qual-dot"></span>
+          <span class="z-qual-text"><strong>Komplexität von innen.</strong> Einfach von aussen, anspruchsvoll von innen. Genau das schützt den Wert.</span>
+        </div>
+      </div>
+
+      <div class="z-crit-section">
+        <h3>Was wir nicht suchen</h3>
+        <div class="z-qual-item">
+          <span class="z-qual-dot red"></span>
+          <span class="z-qual-text">Eigentümerschaft unter 3 Jahren</span>
+        </div>
+        <div class="z-qual-item">
+          <span class="z-qual-dot red"></span>
+          <span class="z-qual-text">PE-gestützte Rollups auf der Suche nach einem Exit</span>
+        </div>
+        <div class="z-qual-item">
+          <span class="z-qual-dot red"></span>
+          <span class="z-qual-text">Turnaround-Situationen ohne stabilen Kundenstamm</span>
+        </div>
+        <div class="z-qual-item">
+          <span class="z-qual-dot red"></span>
+          <span class="z-qual-text">Hockey-Stick-Wachstumspläne ohne operative Grundlage</span>
+        </div>
+      </div>
+
+      <div class="z-crit-section">
+        <h3>Käufer / Investor</h3>
+        <div class="z-qual-item">
+          <span class="z-qual-dot"></span>
+          <span class="z-qual-text"><strong>27 Jahre Technologie & Prozesse.</strong> Aufbau, Leitung und Skalierung digitaler Produkte in der Schweiz und international.</span>
+        </div>
+        <div class="z-qual-item">
+          <span class="z-qual-dot"></span>
+          <span class="z-qual-text"><strong>Angel Investor & Netzwerker.</strong> Jahrelange Erfahrung in der Beurteilung von Unternehmen, Teams und Marktchancen.</span>
+        </div>
+        <div class="z-qual-item">
+          <span class="z-qual-dot"></span>
+          <span class="z-qual-text"><strong>Cross-kulturelle Tiefe.</strong> Schweiz, Indien und Lateinamerika — operative Brücken, keine theoretischen Konzepte.</span>
+        </div>
+        <div class="z-qual-item">
+          <span class="z-qual-dot"></span>
+          <span class="z-qual-text"><strong>Eigenkapital nachgewiesen.</strong> Finanzierung aus eigenen Mitteln, keine PE-Abhängigkeit oder Fremdkapitalsuche.</span>
+        </div>
+      </div>
+
+      <div class="z-crit-section">
+        <h3>Zeitraum &amp; Übernahme</h3>
+        <div class="z-crit-row">
+          <span class="z-cr-label">Führungsübernahme</span>
+          <span class="z-cr-value">Sofort möglich</span>
+        </div>
+        <div class="z-crit-row">
+          <span class="z-cr-label">Eigentumsübergang</span>
+          <span class="z-cr-value">6–18 Monate</span>
+        </div>
+        <div class="z-crit-row">
+          <span class="z-cr-label">Übergangshilfe</span>
+          <span class="z-cr-value">Erwünscht &amp; wertgeschätzt</span>
+        </div>
+      </div>
+
+      <div class="z-crit-section">
+        <h3>Branchen</h3>
+        <div class="z-tags" style="margin-top:0.5rem">
+          <span class="z-tag">Dienstleistung</span>
+          <span class="z-tag">IT / Software</span>
+          <span class="z-tag">Beratung</span>
+          <span class="z-tag">Personalvermittlung</span>
+          <span class="z-tag">Unternehmensberatung</span>
+          <span class="z-tag">Marketing / Werbung</span>
+          <span class="z-tag">Logistik</span>
+          <span class="z-tag">Handel</span>
+          <span class="z-tag">Finanzdienstleistungen</span>
+        </div>
+      </div>
+
+      <div class="z-intent">
+        <p><strong>Kein Exit-Datum. Kein Flip.</strong></p>
+        <p>Vidai sucht ein Unternehmen, das es verdient, weitergeführt zu werden. Von jemandem, der versteht, was es bedeutet, etwas aufzubauen.</p>
+        <p>Wir pflanzen den Samen. Wir pflegen ihn. Der Baum gehört niemandem ausser sich selbst.</p>
+      </div>
+
+    </div><!-- /criteria -->
+
+  </div><!-- /two-col -->
+
+  <div class="z-cta">
+    <div>
+      <h3>Ihr Unternehmen passt in dieses Bild?</h3>
+      <p>Wir hören Ihre Geschichte gerne. Ohne Druck, ohne Eile.</p>
+    </div>
+    <a href="https://www.vidai.ch/#kontakt" class="z-cta-btn">Gespräch vereinbaren</a>
+  </div>
+
+  <!-- FOOTER — reuses footer.css -->
+  <footer>
+    <a href="https://www.vidai.ch" class="footer-logo">
+      <img src="vidai-logo.png" alt="Vidai" />
+    </a>
+    <p class="footer-copy">© 2026 Vidai · Schweiz</p>
+    <ul class="footer-links">
+      <li><a href="https://www.palani.ch/blog" target="_blank" rel="noopener">Blog</a></li>
+      <li><a href="https://www.linkedin.com/in/pkanns/" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+  </footer>
+
+  <!-- JS — same as index.html -->
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script>
+    (function() {
+      // hamburger
+      const hamburger = document.querySelector('.nav-hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+          hamburger.classList.toggle('active');
+        });
+      }
+      // fade-up + field animations
+      const animEls = document.querySelectorAll('.fade-up, .z-field, .z-conviction, .z-crit-section');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+        animEls.forEach(el => observer.observe(el));
+      } else {
+        animEls.forEach(el => el.classList.add('visible'));
+      }
+    })();
+  </script>
+
+</body>
+</html>
