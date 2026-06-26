@@ -450,41 +450,34 @@
   <section id="kontakt">
     <div class="section-inner">
       <p class="s-label white fade-up">Kontakt</p>
-      <h2 class="s-title fade-up">Bereit, über Ihre Nachfolge zu sprechen?</h2>
+      <h2 class="s-title fade-up">Bereit für ein <em>Gespräch?</em></h2>
       <p class="s-sub fade-up">
-        Wir hören Ihre Geschichte gerne — ohne Druck, ohne Eile.
-        Schreiben Sie uns, und wir melden uns persönlich.
+        Wählen Sie direkt einen Termin — ohne Druck, ohne Umwege.
+        30 Minuten. Persönlich. Vertraulich.
       </p>
 
-      <form class="kontakt-form fade-up" id="kontakt-form" novalidate>
-        <div class="form-row">
-          <div class="form-field">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Ihr Name" required />
+      <div class="kontakt-booking fade-up">
+        <div class="booking-meta">
+          <div class="booking-meta-item">
+            <span class="booking-meta-label">Dauer</span>
+            <span class="booking-meta-value">30 Minuten</span>
           </div>
-          <div class="form-field">
-            <label for="email">E-Mail</label>
-            <input type="email" id="email" name="email" placeholder="ihre@email.ch" required />
+          <div class="booking-meta-item">
+            <span class="booking-meta-label">Format</span>
+            <span class="booking-meta-value">Video oder Telefon</span>
+          </div>
+          <div class="booking-meta-item">
+            <span class="booking-meta-label">Sprache</span>
+            <span class="booking-meta-value">Deutsch · English</span>
           </div>
         </div>
-        <div class="form-field">
-          <label for="company">Unternehmen <span style="opacity:0.4">(optional)</span></label>
-          <input type="text" id="company" name="company" placeholder="Ihr Unternehmen" />
-        </div>
-        <div class="form-field">
-          <label for="message">Nachricht</label>
-          <textarea id="message" name="message" placeholder="Was beschäftigt Sie?" required></textarea>
-        </div>
-        <div class="form-submit">
-          <p class="form-note">
-            Ihre Daten werden vertraulich behandelt und nicht weitergegeben.
-          </p>
-          <button type="submit" class="btn-white">Nachricht senden →</button>
-        </div>
-      </form>
 
-      <div class="form-success" id="form-success">
-        <p>Vielen Dank — wir melden uns bald persönlich bei Ihnen.</p>
+        <!-- Calendly inline widget -->
+        <div class="calendly-inline-widget"
+             data-url="https://calendly.com/pkanns/30min?background_color=111111&text_color=f7f6f2&primary_color=c0392b&hide_gdpr_banner=1"
+             style="min-width:320px;height:700px;">
+        </div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
       </div>
     </div>
   </section>
@@ -660,9 +653,7 @@
       background: #ffffffdd;
       backdrop-filter: blur(2px);
     }
-    .kontakt-form input, .kontakt-form textarea {
-      background: white;
-    }
+    /* kontakt form removed — using Calendly embed */
     .werte-icon.red, .werte-icon.green, .werte-icon.dark {
       font-size: 2rem;
       line-height: 1;
