@@ -6,6 +6,7 @@
 #kontakt {
   background: var(--black);
   text-align: center;
+  padding: 60px 64px 0;
 }
 
 #kontakt .s-title {
@@ -19,70 +20,24 @@
 
 #kontakt .s-sub {
   color: rgba(247,246,242,0.5);
-  margin: 0 auto 48px;
+  margin: 0 auto 24px;
 }
 
 /* ── BOOKING WRAPPER ── */
 .kontakt-booking {
-  max-width: 760px;
+  max-width: 900px;
   margin: 0 auto;
-}
-
-/* ── META ROW ── */
-.booking-meta {
-  display: flex;
-  justify-content: center;
-  gap: 0;
-  margin-bottom: 32px;
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.booking-meta-item {
-  flex: 1;
-  padding: 18px 24px;
-  border-right: 1px solid rgba(255,255,255,0.08);
-  text-align: center;
-}
-
-.booking-meta-item:last-child {
-  border-right: none;
-}
-
-.booking-meta-label {
-  display: block;
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(247,246,242,0.3);
-  font-weight: 500;
-  margin-bottom: 6px;
-}
-
-.booking-meta-value {
-  display: block;
-  font-size: 14px;
-  color: rgba(247,246,242,0.8);
-  font-weight: 300;
 }
 
 /* ── CALENDLY EMBED ── */
 .calendly-inline-widget {
-  border: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 600px) {
-  .booking-meta {
-    flex-direction: column;
-  }
-
-  .booking-meta-item {
-    border-right: none;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .booking-meta-item:last-child {
-    border-bottom: none;
+@media (max-width: 768px) {
+  #kontakt {
+    padding: 40px 24px 0;
   }
 
   .calendly-inline-widget {
