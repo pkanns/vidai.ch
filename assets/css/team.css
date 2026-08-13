@@ -4,21 +4,14 @@
    ============================================================ */
 
 #team {
-  padding-right: 10px;
-  padding-top: 50px;
   background: var(--white);
-}
-
-/* Team section content area is wider than the site's standard 1100px container */
-#team .section-inner {
-  max-width: 1150px;
 }
 
 .team-grid {
   display: grid;
   grid-template-columns: 320px 1fr;
   gap: 80px;
-  align-items: stretch;
+  align-items: start;
 }
 
 /* ── PORTRAIT ── */
@@ -26,30 +19,20 @@
   position: relative;
 }
 
-/* FIX: percentage heights on a child are ignored unless the parent has an
-   explicit height (it doesn't — .team-portrait is auto-height). This
-   caused the image to render at full natural size instead of being
-   cropped, and pushed the decorative border out of place. Using
-   aspect-ratio gives a predictable, cropped portrait at any width. */
 .team-portrait img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 3/4;
   object-fit: cover;
   filter: grayscale(20%);
-  border-radius: 2px;
 }
 
-/* FIX: border position is now relative to the image's own box instead of
-   a hardcoded 290px offset, so it stays correctly placed regardless of
-   the rendered portrait height. */
 .team-portrait::after {
   content: '';
   position: absolute;
-  bottom: -16px;
+  bottom: -12px;
   right: -12px;
   width: 60%;
-  height: 32%;
+  height: 60%;
   border: 2px solid var(--red);
   z-index: -1;
 }
@@ -80,7 +63,7 @@
   font-weight: 300;
   line-height: 1.85;
   margin-bottom: 20px;
-  max-width: 100%;
+  max-width: 540px;
 }
 
 /* ── CREDENTIALS ── */
