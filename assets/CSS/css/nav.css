@@ -1,0 +1,126 @@
+/* ============================================================
+   NAV.CSS — Fixed navigation
+   Vidai AG · vidai.ch
+   ============================================================ */
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 64px;
+  background: rgba(247,246,242,0.93);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--light);
+  transition: box-shadow var(--ease);
+}
+
+nav.scrolled {
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+}
+
+.nav-logo img {
+  height: 42px;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--mid);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color var(--ease);
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 0; height: 1px;
+  background: var(--red);
+  transition: width var(--ease);
+}
+
+.nav-links a:hover {
+  color: var(--red);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ── HAMBURGER (mobile) ── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--black);
+  transition: transform var(--ease), opacity var(--ease);
+}
+
+.nav-hamburger.open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.nav-hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-hamburger.open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* ── MOBILE NAV ── */
+@media (max-width: 768px) {
+  nav {
+    padding: 16px 24px;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 72px; left: 0; right: 0;
+    background: var(--white);
+    flex-direction: column;
+    gap: 0;
+    border-bottom: 1px solid var(--light);
+    padding: 8px 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 14px 24px;
+    font-size: 14px;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+}
