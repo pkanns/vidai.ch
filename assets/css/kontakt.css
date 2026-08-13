@@ -1,0 +1,46 @@
+/* ============================================================
+   KONTAKT.CSS — Calendly booking section
+   Vidai AG · vidai.ch
+   ============================================================ */
+
+#kontakt {
+  background: var(--black);
+  text-align: center;
+  padding: 60px 64px 0;
+}
+
+#kontakt .s-title {
+  color: var(--white);
+}
+
+#kontakt .s-title em {
+  font-style: italic;
+  color: var(--red);
+}
+
+#kontakt .s-sub {
+  color: rgba(247,246,242,0.5);
+  margin: 0 auto 24px;
+}
+
+/* ── BOOKING WRAPPER ── */
+.kontakt-booking {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ── CALENDLY EMBED ── */
+.calendly-inline-widget {
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  #kontakt {
+    padding: 40px 24px 0;
+  }
+
+  .calendly-inline-widget {
+    height: 800px !important;
+  }
+}
