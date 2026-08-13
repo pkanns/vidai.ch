@@ -2,10 +2,10 @@
     --ink:    #1a1a18;
     --muted:  #6b6b60;
     --rule:   #e0ddd6;
-    --bg:     #fefcf5;
+    --bg:     #f7f6f2;
     --white:  #ffffff;
-    --red:    #b83b2e;
-    --green:  #2c3e2f;
+    --red:    #c0392b;
+    --green:  #2d5a3d;
     --tag-bg: #edeae3;
   }
 
@@ -155,8 +155,9 @@
     min-height: 0;
     min-width: 0;
   }
-  .z-fields-panel { flex: 1 1 62%; border-right: 1px solid var(--rule); padding-right: clamp(1.2rem, 3vw, 2.6rem); }
-  .z-criteria-panel { flex: 1 1 38%; max-width: 460px; }
+  /* 58/42 split between Felder and Kriterien panels */
+  .z-fields-panel { flex: 1 1 58%; border-right: 1px solid var(--rule); padding-right: clamp(1.2rem, 3vw, 2.6rem); }
+  .z-criteria-panel { flex: 1 1 42%; max-width: 520px; }
 
   .panel-head {
     flex: 0 0 auto;
@@ -176,9 +177,24 @@
     color: var(--muted);
     margin: 0;
     white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
+  /* Mild differentiation between the two panels, reusing the same
+     dash+color convention as .s-label on the homepage (base.css) */
+  .z-col-label::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 1px;
+  }
+  .z-fields-panel .z-col-label { color: var(--red); }
+  .z-fields-panel .z-col-label::before { background: var(--red); }
+  .z-criteria-panel .z-col-label { color: var(--green); }
+  .z-criteria-panel .z-col-label::before { background: var(--green); }
 
-  /* stepper controls (left panel) */
+  /* stepper controls (shared by Felder and Kriterien panels) */
   .stepper-nav { display: flex; align-items: center; gap: 0.55rem; flex-wrap: wrap; justify-content: flex-end; }
   .step-arrow {
     width: clamp(24px, 3.6vh, 30px);
@@ -214,8 +230,26 @@
   .dot.active { background: var(--ink); color: var(--white); border-color: var(--ink); }
   .dot:not(.active):hover { border-color: var(--ink); color: var(--ink); }
 
-  /* criteria tabs (right panel) */
-  .crit-tabs { display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: flex-end; }
+  /* criteria tabs (right panel) — sits inside .stepper-nav alongside its own
+     prev/next arrows. The 42%-width panel doesn't have room for 4 pills to
+     wrap cleanly, so this stays a single scrollable line at ALL widths
+     (not just mobile) — roughly 3 tabs show fully, the 4th is one arrow
+     click or a scroll away. */
+  .z-criteria-panel .stepper-nav { flex-wrap: nowrap; min-width: 0; }
+  .crit-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.4rem;
+    justify-content: flex-start;
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.15rem 0;
+  }
+  .crit-tabs::-webkit-scrollbar { display: none; }
   .crit-tab {
     font-size: clamp(0.68rem, 1.3vh, 0.76rem);
     font-weight: 500;
@@ -226,6 +260,7 @@
     border-radius: 999px;
     cursor: pointer;
     white-space: nowrap;
+    flex-shrink: 0;
     transition: background 0.2s, color 0.2s, border-color 0.2s;
   }
   .crit-tab.active { background: var(--green); color: var(--white); border-color: var(--green); }
@@ -398,12 +433,13 @@
     .home-btn span.txt { display: none; }
     .z-hero-sub { display: none; }
     .z-body { flex-direction: column; gap: clamp(0.5rem, 1.4vh, 0.9rem); }
-    .z-fields-panel { border-right: none; border-bottom: 1px solid var(--rule); padding-right: 0; padding-bottom: clamp(0.5rem, 1.4vh, 0.9rem); flex: 1 1 56%; }
-    .z-criteria-panel { flex: 1 1 44%; max-width: none; }
+    .z-fields-panel { border-right: none; border-bottom: 1px solid var(--rule); padding-right: 0; padding-bottom: clamp(0.5rem, 1.4vh, 0.9rem); flex: 1 1 58%; }
+    .z-criteria-panel { flex: 1 1 42%; max-width: none; }
     .crit-tabs { justify-content: flex-start; }
     .conviction-slide { margin: -0.6rem; }
 
-    /* keep prev/dots/next stepper on one line: dots scroll horizontally instead of wrapping */
+    /* keep prev/dots/next stepper on one line for BOTH panels: dots/tabs scroll
+       horizontally instead of wrapping, mirroring the Felder stepper exactly */
     .panel-head { flex-wrap: nowrap; }
     .stepper-nav {
       flex-wrap: nowrap;
@@ -424,6 +460,8 @@
     }
     .step-dots::-webkit-scrollbar { display: none; }
     .dot { flex-shrink: 0; }
+    /* .crit-tabs single-line/scroll behavior is now applied at all widths,
+       see the base (non-media) rule above — nothing extra needed here. */
   }
 
   /* ── RESPONSIVE (mobile & tablet): allow this page to scroll ── */
