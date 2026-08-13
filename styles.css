@@ -1,4 +1,4 @@
-  :root {
+ :root {
     --ink:    #1a1a18;
     --muted:  #6b6b60;
     --rule:   #e0ddd6;
@@ -170,29 +170,20 @@
     flex-wrap: wrap;
   }
   .z-col-label {
-    font-size: clamp(0.66rem, 1.3vh, 0.74rem);
-    font-weight: 500;
-    letter-spacing: 0.14em;
+    font-size: clamp(0.6rem, 1.15vh, 0.68rem);
+    font-weight: 600;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--muted);
     margin: 0;
     white-space: nowrap;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    color: var(--white);
+    padding: 5px 12px;
+    border-radius: 3px;
   }
-  /* Mild differentiation between the two panels, reusing the same
-     dash+color convention as .s-label on the homepage (base.css) */
-  .z-col-label::before {
-    content: '';
-    display: inline-block;
-    width: 16px;
-    height: 1px;
-  }
-  .z-fields-panel .z-col-label { color: var(--red); }
-  .z-fields-panel .z-col-label::before { background: var(--red); }
-  .z-criteria-panel .z-col-label { color: var(--green); }
-  .z-criteria-panel .z-col-label::before { background: var(--green); }
+  /* Clear, simple differentiation: solid colored badge per panel,
+     matching each panel's own active-state color (red dot / green tab) */
+  .z-fields-panel .z-col-label { background: var(--red); }
+  .z-criteria-panel .z-col-label { background: var(--green); }
 
   /* stepper controls (shared by Felder and Kriterien panels) */
   .stepper-nav { display: flex; align-items: center; gap: 0.55rem; flex-wrap: wrap; justify-content: flex-end; }
@@ -227,8 +218,8 @@
     white-space: nowrap;
     transition: background 0.2s, color 0.2s, border-color 0.2s;
   }
-  .dot.active { background: var(--ink); color: var(--white); border-color: var(--ink); }
-  .dot:not(.active):hover { border-color: var(--ink); color: var(--ink); }
+  .dot.active { background: var(--red); color: var(--white); border-color: var(--red); }
+  .dot:not(.active):hover { border-color: var(--red); color: var(--red); }
 
   /* criteria tabs (right panel) — sits inside .stepper-nav alongside its own
      prev/next arrows. The 42%-width panel doesn't have room for 4 pills to
