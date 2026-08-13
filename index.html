@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="KMU Nachfolge Schweiz — Vidai begleitet Unternehmer bei der Nachfolgeregelung. Langfristig. Wertorientiert. Operativ." />
+  <meta name="description" content="Unternehmensnachfolge Schweiz — Vidai ist ein Search Fund für KMU Nachfolge, begleitet Unternehmer bei der Nachfolgeregelung und Nachfolgeplanung für AG und GmbH. Langfristig. Wertorientiert. Operativ." />
   <title>Vidai — KMU Nachfolge Schweiz</title>
 
 <!-- Favicons -->
+<link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -44,7 +45,7 @@
         "@type": "Person",
         "@id": "https://www.kannan.ch/#person",
         "name": "Kannan Palani",
-        "url": "https://www.kannan.ch",
+        "url": "https://www.palani.ch/de",
         "image": "https://www.kannan.ch/Kannan.jpg",
         "jobTitle": "Gründer, Vidai",
         "sameAs": [
@@ -84,9 +85,9 @@
       ],
       "inLanguage": "de",
       "sameAs": [
-        "https://www.linkedin.com/in/pkanns/",
+        "https://www.linkedin.com/in/pkanns/?locale=de",
         "https://www.kannan.ch",
-        "https://www.palani.ch"
+        "https://www.palani.ch/de"
       ]
     }
   ]
@@ -103,6 +104,7 @@
   <link rel="stylesheet" href="assets/css/werte.css" />
   <link rel="stylesheet" href="assets/css/ziele.css" />
   <link rel="stylesheet" href="assets/css/team.css" />
+  <link rel="stylesheet" href="assets/css/faq.css" />
   <link rel="stylesheet" href="assets/css/kontakt.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
   <style>
@@ -165,9 +167,9 @@
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 1.25rem;
-      margin-top: 2.5rem;
-      padding-top: 2rem;
-      border-top: 0.5px solid rgba(0,0,0,0.1);
+      margin-top: 0.8rem;
+      
+      
     }
     .ziele-cta h3 {
       font-family: 'Playfair Display', serif;
@@ -199,9 +201,6 @@
       background: #2c3e2f;
       color: #fff;
     }
-    .ziele-grid {
-      grid-template-columns: repeat(2, 1fr) !important;
-    }
   </style>
 </head>
 <body>
@@ -215,6 +214,7 @@
       <li><a href="#werte">Werte</a></li>
       <li><a href="#ziele">Ziele</a></li>
       <li><a href="#team">Team</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
     <button class="nav-hamburger" aria-label="Menü öffnen">
@@ -237,7 +237,6 @@
         bei der Nachfolge — mit Respekt für das Lebenswerk,
         die Mitarbeiter und die Kunden. Während wir suchen, bauen wir. 
         Was wir bauen, sagt viel darüber aus, was wir suchen.
-
       </p>
       <a href="#kontakt" class="btn-primary fade-up">Gespräch vereinbaren</a>
     </div>
@@ -283,7 +282,7 @@
           <div class="werte-icon red">&#9829;</div>
           <h3>Menschen vor Gewinn</h3>
           <p>
-            Die beste Einheit, um Arbeit zu messen, ist nicht die Zeit, sondern der Sinn und die Freude, Menschen zu dienen.
+             Die beste Einheit, um Arbeit zu messen, ist nicht die Zeit, sondern der Sinn und die Freude, Menschen zu dienen.
             Institutionelles Wissen lebt in Menschen, nicht in Steuererklärungen. Es erinnert uns daran, was versucht wurde,
             was funktioniert hat und warum. Moral zuerst: Sie ist kein Bonus, sie ist das Fundament.
             Menschen vor Gewinn heisst: Schätzen, was wichtig ist: Menschen. Brechen, was bremst: Komplexität.
@@ -338,16 +337,17 @@
       </p>
 
       <!-- Criteria strip -->
-      <div class="ziele-criteria fade-up">
+      <!-- <div class="ziele-criteria fade-up">
         <span><strong>Umsatz</strong> CHF 1–10 Mio.</span>
         <span><strong>EBITDA</strong> &gt; CHF 200k</span>
         <span><strong>Mitarbeitende</strong> 5–50</span>
+        <span><strong>Rechtsform</strong> AG / GmbH</span>
         <span><strong>Standort</strong> Deutschschweiz</span>
-      </div>
+      </div> -->
 
-      <!-- Four field cards -->
-      <div class="ziele-grid">
-        <div class="ziel-card fade-up">
+      <!-- Static field grid: all 4 fields in one row -->
+      <div class="ziele-grid fade-up">
+        <div class="ziel-card">
           <div class="ziel-num">01</div>
           <h3>IT Produkte</h3>
           <div class="ziel-tags">
@@ -356,7 +356,7 @@
             <span class="ziel-tag">Dienstleistung</span>
           </div>
         </div>
-        <div class="ziel-card fade-up">
+        <div class="ziel-card">
           <div class="ziel-num">02</div>
           <h3>IT Services</h3>
           <div class="ziel-tags">
@@ -365,7 +365,7 @@
             <span class="ziel-tag">Implementierung</span>
           </div>
         </div>
-        <div class="ziel-card fade-up">
+        <div class="ziel-card">
           <div class="ziel-num">03</div>
           <h3>Business Services</h3>
           <div class="ziel-tags">
@@ -374,7 +374,7 @@
             <span class="ziel-tag">Marketing</span>
           </div>
         </div>
-        <div class="ziel-card fade-up">
+        <div class="ziel-card">
           <div class="ziel-num">04</div>
           <h3>Last Mile Services</h3>
           <div class="ziel-tags">
@@ -405,28 +405,37 @@
       <div class="team-grid">
 
       <div class="team-portrait fade-up">
-      <img src="Kannan Palani.jpg" alt="Kannan Palani" />
+      <img src="Kannan_Palani.jpg" alt="Kannan Palani" />
       </div>
 
         <div class="team-bio fade-up">
           <h3 class="team-name">Kannan Palani</h3>
           <p class="team-role">Gründer · Vidai</p>
           <p>
-            27 Jahre in globalen Unternehmen — davon 17 Jahre bei
-            The Adecco Group — haben mir eines klar gemacht:
-            echte Wertschöpfung entsteht nicht durch Hierarchie,
-            sondern durch Menschen, die Verantwortung übernehmen dürfen.
+            27 Jahre in globalen Unternehmen, davon 17 Jahre bei der Adecco Group, haben Kannan eines
+             klar gemacht: Menschen, die Verantwortung übernehmen dürfen, 
+            schaffen mehr Wert als jede Hierarchie. Diese Erfahrung sammelte er bei der Adecco Group, 
+            General Electric, Lexus und der Fiat Group, in den Bereichen Operations, Technologie, 
+            Audit, Innovation und Program Management.
           </p>
           <p>
-            Ich habe in Operations, Technologie, Audit, Innovation und
-            Program Management gearbeitet — und ein Jahrzehnt lang
-            als Angel Investor Unternehmer begleitet. Vidai ist der
-            nächste Schritt: direkt investieren, operativ führen,
-            langfristig denken.
+            Gelebt und gearbeitet hat er dabei in sechs Ländern auf drei Kontinenten: USA, Indien, 
+            Saudi-Arabien, Italien, Frankreich und der Schweiz.
           </p>
           <p>
-            Ich lebe in der Schweiz, bin in Indien verwurzelt und
-            baue Brücken zwischen beiden Welten — und darüber hinaus.
+            Ein Jahrzehnt lang hat er nebenbei als Angel Investor junge Startup-Gründer 
+            rund um die Welt begleitet und dabei aus erster Hand gesehen, wie viel Druck der 
+            Hockey-Stick-Weg auf Menschen und Ideen macht. Genau das will er mit Vidai anders 
+            machen: direkt investieren, operativ mit anpacken, langfristig denken.
+          </p>
+          <p>
+            Sprachen sind für ihn mehr als ein Talent, sie sind gelebte Verbindung. 
+            Tamil, Hindi, Englisch und Deutsch spricht er fliessend. Spanisch spricht er 
+            stolz mit seinen Suegros, eine Verbindung, die ihn auch mit Mexiko und Guatemala 
+            verknüpft. Italienisch, einst im Berufsalltag in Turin zuhause, und Französisch, 
+            eine Studienvoraussetzung für seinen MBA in Frankreich, lässt er bei Bedarf wieder 
+            aufleben. Eingebürgerter Schweizer (erste Generation), ist er in Indien verwurzelt, 
+            und baut Brücken zwischen beiden Welten, und darüber hinaus.
           </p>
 
           <div class="team-creds">
@@ -437,11 +446,46 @@
           </div>
 
           <div class="team-links">
-            <a href="https://www.palani.ch/blog" target="_blank" rel="noopener">Blog lesen</a>
-            <a href="https://www.linkedin.com/in/pkanns/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.palani.ch/de/blog" target="_blank" rel="noopener">Blog lesen</a>
+            <a href="https://www.linkedin.com/in/pkanns/?locale=de" target="_blank" rel="noopener">LinkedIn</a>
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ (SEO + GEO: clear, extractable facts for search & AI answer engines) ── -->
+  <section id="faq">
+    <div class="section-inner">
+      <p class="s-label green fade-up">Häufige Fragen</p>
+      <h2 class="s-title fade-up">Kurz erklärt.</h2>
+
+      <div class="faq-item fade-up" style="margin-bottom:1.75rem;">
+        <h3 style="font-size:1.05rem;margin-bottom:0.4rem;">Was bedeutet „Während wir suchen, bauen wir"?</h3>
+        <p>
+          Die Nachfolgesuche ist kein passiver Prozess. Während wir passende Unternehmen suchen, bauen wir eigene Projekte auf. 
+          Ein Beispiel ist <a href="https://mulai.ch">Mulai.ch</a> unser Modell für Zusammenarbeit und Arbeitsorganisation. Was wir bauen, zeigt, 
+          wie wir arbeiten. Und es zeigt, was wir suchen: Unternehmen mit echter Substanz, geführt mit Sorgfalt.
+        </p>
+      </div>
+
+      <div class="faq-item fade-up" style="margin-bottom:1.75rem;">
+        <h3 style="font-size:1.05rem;margin-bottom:0.4rem;">Wie unterscheidet sich Vidai von Private Equity?</h3>
+        <p>
+          Private-Equity-Fonds haben oft ein festes Zeitfenster, meist 3 bis 7 Jahre, danach folgt der Exit. 
+          Vidai hat kein festes Exit-Datum. Wir denken in Jahrzehnten, nicht in Fondszyklen. Das Ziel: ein Unternehmen, 
+          das auch 10 bis 20 Jahre nach der Übergabe noch stabil dasteht.
+          <a href="https://www.palani.ch/de" rel="noopener">palani.ch</a>.
+        </p>
+      </div>
+
+      <div class="ziele-cta fade-up" style="margin-top: 0.5rem;">
+        <div>
+          <h3>Weitere Fragen zur Unternehmensnachfolge & Nachfolgeregelung</h3>
+          <p>Ein-Personen-Team, Kapital, Vertraulichkeit, Private Equity im Vergleich — und mehr.</p>
+        </div>
+        <a href="faq.html" class="ziele-mehr">Alle Fragen ansehen →</a>
       </div>
     </div>
   </section>
@@ -470,14 +514,50 @@
   <!-- ── FOOTER ── -->
   <footer>
     <a href="#home" class="footer-logo">
-      <img src="vidai-logo.png" alt="Vidai" />
+      <img src="vidai_logo_footer.png" alt="Vidai" />
     </a>
     <p class="footer-copy">© 2026 Vidai · Schweiz</p>
     <ul class="footer-links">
-      <li><a href="https://www.palani.ch/blog" target="_blank" rel="noopener">Blog</a></li>
-      <li><a href="https://www.linkedin.com/in/pkanns/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li class="footer-ecosystem">
+        <a href="#" class="ecosystem-toggle" aria-expanded="false">Unser Ecosystem</a>
+        <ul class="ecosystem-submenu">
+          <li><a href="https://palani.ch/de" target="_blank" rel="noopener">Palani (DE/EN)</a></li>
+          <li><a href="https://mulai.ch" target="_blank" rel="noopener">Mulai (EN)</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="https://www.palani.ch/de/blog" target="_blank" rel="noopener">Blog</a></li>
+      <li><a href="https://www.linkedin.com/in/pkanns/?locale=de" target="_blank" rel="noopener">LinkedIn</a></li>
     </ul>
   </footer>
+
+  <script>
+    (function () {
+      var ecoLi = document.querySelector('.footer-ecosystem');
+      var toggle = document.querySelector('.ecosystem-toggle');
+      if (!ecoLi || !toggle) return;
+
+      toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        var isOpen = ecoLi.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!ecoLi.contains(e.target)) {
+          ecoLi.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          ecoLi.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
 
   <!-- Modular JS (keeping original references — they work with the new content) -->
   <script src="assets/js/nav.js"></script>
