@@ -1,5 +1,5 @@
 /* ============================================================
-   NAV.JS — Navigation behaviour + contact form handler
+   NAV.JS — Navigation behaviour
    Vidai AG · vidai.ch
    ============================================================ */
 
@@ -36,39 +36,9 @@
     });
   }
 
-  /* ── CONTACT FORM ── */
-  const form    = document.getElementById('kontakt-form');
-  const success = document.getElementById('form-success');
-
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const data = {
-        name:    form.querySelector('[name="name"]').value.trim(),
-        email:   form.querySelector('[name="email"]').value.trim(),
-        company: form.querySelector('[name="company"]').value.trim(),
-        message: form.querySelector('[name="message"]').value.trim(),
-      };
-
-      // Basic validation
-      if (!data.name || !data.email || !data.message) return;
-
-      // Encode as mailto for now — can be replaced with Formspree/Netlify Forms
-      const subject = encodeURIComponent('Vidai AG — Kontaktanfrage von ' + data.name);
-      const body    = encodeURIComponent(
-        'Name: '      + data.name    + '\n' +
-        'E-Mail: '    + data.email   + '\n' +
-        'Unternehmen: '+ data.company + '\n\n' +
-        data.message
-      );
-
-      window.location.href = 'mailto:info@vidai.ch?subject=' + subject + '&body=' + body;
-
-      // Show success message
-      form.style.display = 'none';
-      if (success) success.classList.add('visible');
-    });
-  }
+  /* NOTE: the #kontakt-form handler that used to live here was removed —
+     the Kontakt section now uses a Calendly embed, so that form element
+     no longer exists in the DOM. Removing dead code per site cleanup
+     rules. */
 
 })();
