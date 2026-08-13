@@ -1,4 +1,4 @@
-  :root {
+:root {
     --ink:    #1a1a18;
     --muted:  #6b6b60;
     --rule:   #e0ddd6;
@@ -25,41 +25,8 @@
     position: relative;
   }
 
-  /* ── ambient background ── */
-  .ambient {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    overflow: hidden;
-  }
-  .ambient::before,
-  .ambient::after {
-    content: "";
-    position: absolute;
-    width: 46vw;
-    height: 46vw;
-    border-radius: 50%;
-    filter: blur(70px);
-    opacity: 0.16;
-    animation: drift 26s ease-in-out infinite alternate;
-  }
-  .ambient::before {
-    top: -14vw;
-    right: -10vw;
-    background: var(--green);
-  }
-  .ambient::after {
-    bottom: -18vw;
-    left: -12vw;
-    background: var(--red);
-    animation-duration: 32s;
-    animation-delay: -6s;
-  }
-  @keyframes drift {
-    0%   { transform: translate(0,0) scale(1); }
-    100% { transform: translate(3vw,4vw) scale(1.12); }
-  }
+  /* ── ambient background — disabled, didn't match the rest of the site ── */
+  .ambient { display: none; }
 
   /* ── return home button ── */
   .home-btn {
