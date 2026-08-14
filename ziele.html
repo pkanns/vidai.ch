@@ -23,6 +23,78 @@
 
 <link rel="stylesheet" href="styles.css" />
 
+<!-- Inline CSS to fix Kriterien tabs – keeps everything in one file -->
+<style>
+  /* Force Kriterien tabs into a single line, same as Tätigkeitsfelder */
+  .z-criteria-panel .stepper-nav {
+    flex-wrap: nowrap !important;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .crit-tabs {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 0.4rem;
+    overflow: hidden !important;
+    flex: 1 1 auto;
+    min-width: 0;
+    justify-content: flex-start;
+    padding: 0.15rem 0;
+  }
+
+  .crit-tab {
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+    font-size: clamp(0.6rem, 1.3vh, 0.76rem);
+  }
+
+  /* Make sure panel head stays on one line */
+  .z-criteria-panel .panel-head {
+    flex-wrap: nowrap !important;
+  }
+
+  /* On mobile, keep everything in one line */
+  @media (max-width: 860px) {
+    .z-criteria-panel .panel-head {
+      flex-wrap: nowrap !important;
+    }
+    .z-criteria-panel .stepper-nav {
+      flex-wrap: nowrap !important;
+      width: 100%;
+      min-width: 0;
+    }
+    .crit-tabs {
+      overflow: hidden !important;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .crit-tab {
+      flex-shrink: 0 !important;
+      font-size: 0.6rem;
+      padding: 0.2rem 0.4rem;
+    }
+    .step-arrow {
+      width: 20px;
+      height: 20px;
+      font-size: 0.75rem;
+    }
+  }
+
+  /* Very small screens */
+  @media (max-width: 480px) {
+    .crit-tab {
+      font-size: 0.5rem !important;
+      padding: 0.15rem 0.3rem !important;
+    }
+    .step-arrow {
+      width: 18px !important;
+      height: 18px !important;
+      font-size: 0.6rem !important;
+    }
+  }
+</style>
+
 <!-- JSON-LD: BreadcrumbList + WebPage -->
 <script type="application/ld+json">
 {
@@ -223,19 +295,19 @@
             <div class="qual-item"><span class="qual-dot"></span><span class="qual-text"><strong>Komplexität von innen.</strong> Einfach von aussen, anspruchsvoll von innen. Genau das schützt den Wert.</span></div>
           </div>
 
-          <div class="slide crit-slide" data-index="4">
-            <h3>Zeitraum &amp; Übernahme</h3>
-            <div class="crit-row"><span class="cr-label">Führungsübernahme</span><span class="cr-value">Sofort möglich</span></div>
-            <div class="crit-row"><span class="cr-label">Eigentumsübergang</span><span class="cr-value">6–18 Monate</span></div>
-            <div class="crit-row"><span class="cr-label">Übergangshilfe</span><span class="cr-value">Erwünscht &amp; wertgeschätzt</span></div>
-          </div>
-
-           <div class="slide crit-slide" data-index="2">
+          <div class="slide crit-slide" data-index="2">
             <h3>Was wir nicht suchen</h3>
             <div class="qual-item"><span class="qual-dot red"></span><span class="qual-text">Eigentümerschaft unter 3 Jahren</span></div>
             <div class="qual-item"><span class="qual-dot red"></span><span class="qual-text">PE-gestützte Rollups auf der Suche nach einem Exit</span></div>
             <div class="qual-item"><span class="qual-dot red"></span><span class="qual-text">Turnaround-Situationen ohne stabilen Kundenstamm</span></div>
             <div class="qual-item"><span class="qual-dot red"></span><span class="qual-text">Hockey-Stick-Wachstumspläne ohne operative Grundlage</span></div>
+          </div>
+
+          <div class="slide crit-slide" data-index="3">
+            <h3>Zeitraum &amp; Übernahme</h3>
+            <div class="crit-row"><span class="cr-label">Führungsübernahme</span><span class="cr-value">Sofort möglich</span></div>
+            <div class="crit-row"><span class="cr-label">Eigentumsübergang</span><span class="cr-value">6–18 Monate</span></div>
+            <div class="crit-row"><span class="cr-label">Übergangshilfe</span><span class="cr-value">Erwünscht &amp; wertgeschätzt</span></div>
           </div>
         </div>
       </div>
