@@ -1,5 +1,5 @@
 # One post URL per line. Row order = display order on the homepage.
 # Lines starting with # are ignored. Add/remove/reorder lines to change what shows.
-https://www.palani.ch/de/post/übergang
+https://www.palani.ch/de/post/%C3%BCbergang
 https://www.palani.ch/de/post/vidai-
 https://www.palani.ch/de/post/mulai
