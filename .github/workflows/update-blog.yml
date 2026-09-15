@@ -1,0 +1,43 @@
+# Keeps the "Vom Blog" section on the homepage in sync with palani.ch,
+# without a manual step. Runs build_blog.py on a schedule; if the
+# fetched posts changed anything in index.html, commits and pushes
+# that change to main — which then triggers the existing
+# "Deploy static content to Pages" workflow automatically.
+name: Update blog posts
+
+on:
+  schedule:
+    - cron: "0 5 * * *"  # daily at 05:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-blog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Regenerate blog section from assets/data/blog-posts.txt
+        run: python3 scripts/build_blog.py
+
+      - name: Commit and push if index.html changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- index.html; then
+            git add index.html
+            git commit -m "chore: refresh blog posts from palani.ch"
+            git push
+          else
+            echo "No changes — blog section already up to date."
+          fi
