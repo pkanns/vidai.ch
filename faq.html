@@ -30,116 +30,134 @@
 
   <!-- JSON-LD: FAQPage (full list) + Breadcrumb -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
       {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://vidai.ch/" },
-          { "@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://vidai.ch/faq.html" }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://vidai.ch/faq.html#faq",
-        "url": "https://vidai.ch/faq.html",
-        "inLanguage": "de",
-        "about": {
-          "@id": "https://vidai.ch/#organization"
-        },
-        "mainEntity": [
+      "@context": "https://schema.org",
+      "@graph": [
           {
-            "@type": "Question",
-            "name": "Was ist Vidai?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Vidai ist ein Schweizer Unternehmen für KMU Nachfolgeregelung mit Sitz in der Deutschschweiz. Vidai übernimmt langfristige Mehrheitsbeteiligungen an kleinen und mittleren Unternehmen (AG und GmbH) im Rahmen einer Firmen Nachfolgeregelung, ohne festes Exit-Datum."
-            }
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                  {
+                      "@type": "ListItem",
+                      "position": 1,
+                      "name": "Startseite",
+                      "item": "https://vidai.ch/"
+                  },
+                  {
+                      "@type": "ListItem",
+                      "position": 2,
+                      "name": "FAQ",
+                      "item": "https://vidai.ch/faq.html"
+                  }
+              ]
           },
           {
-            "@type": "Question",
-            "name": "Wer ist Kannan Palani?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Kannan Palani ist der Gründer von Vidai. Er verfügt über 27 Jahre Führungserfahrung in globalen Unternehmen, davon 17 Jahre bei The Adecco Group, sowie über ein Jahrzehnt Erfahrung als Angel Investor. Mehr über Kannan Palani unter palani.ch."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Ist Vidai ein Ein-Personen-Team?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Nein. Über die Jahre hat Kannan ein Netzwerk aufgebaut, das Suche, Investitionen, Technology & Back Office sowie Kommunikation mit Mitarbeitenden, Kunden und Lieferanten unterstützt. Sobald eine Transaktion konkret wird, werden gezielt Fachpersonen hinzugezogen: Recht, Finanzen, Treuhand und Branchenwissen, je nach Phase vor oder nach dem Deal. Im Bereich Technology & Back Office unterstützt ihn ein Team in Coimbatore vollzeit, von der Web-Präsenz bis zur Primärrecherche. Bei der eigentlichen Nachfolgeregelung ist diese Unterstützung aus Coimbatore begrenzt, aufgrund der VTV-Anforderungen und der Anforderungen an die deutsche Sprache."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Für welche Unternehmen eignet sich eine Nachfolgeregelung mit Vidai?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Vidai richtet sich an eigentümergeführte AG und GmbH in der Deutschschweiz mit CHF 1–10 Mio. Umsatz, mehr als CHF 200k EBITDA und 5–50 Mitarbeitenden, die eine Nachfolgeregelung suchen."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Ich habe keinen familieninternen Nachfolger. Was jetzt?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Das ist häufig. Viele Unternehmer haben keine Nachfolge innerhalb der Familie. Vidai bietet eine externe Lösung: eine langfristige Mehrheitsbeteiligung statt eines schnellen Verkaufs an einen strategischen Käufer. Wir übernehmen Verantwortung für das Lebenswerk, die Mitarbeitenden und die Kunden, ohne festes Exit-Datum."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Wie unterscheidet sich Vidai von Private Equity?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Private-Equity-Fonds haben oft ein festes Zeitfenster, meist 3 bis 7 Jahre, danach folgt der Exit. Vidai hat kein festes Exit-Datum. Wir denken in Jahrzehnten, nicht in Fondszyklen. Das Ziel: ein Unternehmen, das auch 10 bis 20 Jahre nach der Übergabe noch stabil dasteht."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Wie viel Kapital seid ihr bereit zu investieren?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Das hängt vom Unternehmen ab. Zwei Fragen sind entscheidend: Wie gut erwirtschaftet das Unternehmen langfristig Cashflow? Und wie stark hängt der Erfolg vom Eigentümer selbst ab, lässt sich das auf eine neue Führung übertragen? Wir bringen eigenes Kapital ein, im Ziel 40% des Unternehmenswerts. Ist mehr Kapital nötig, holen wir externe Investoren dazu. Meist nehmen wir auch einen Bankkredit auf, das Hurdle-Rate-System der Banken schätzen wir als robuste zweite Einschätzung. Ein festes Angebot machen wir erst, wenn ein Business- und Finanzplan steht. Uns ist wichtig: ein guter Exit für den Unternehmer, und dass die Firma auch 10 bis 20 Jahre nach der Übergabe noch stabil dasteht."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Bleiben die Mitarbeitenden nach der Übernahme?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Ja, das ist uns wichtig. Wir kaufen kein Unternehmen, um es zu zerlegen, wir übernehmen es, um es weiterzuführen. Die Mitarbeitenden kennen den Betrieb, die Kunden und die Prozesse, sie sind Teil der Substanz, die wir übernehmen wollen. Wir begrüssen auch mehr Eigentum bei Mitarbeitenden, nicht weniger: Wenn Mitarbeitende bereit sind, das unternehmerische Risiko mitzutragen, ist das für uns ein Vorteil. Veränderung gehört zum Geschäft und zum Leben, nicht alle kommen gleich gut damit zurecht. Für Mitarbeitende, die mit dem Übergang zu kämpfen haben, sorgen wir mit Mitgefühl und Sorgfalt für die nötige Unterstützung."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Bleibt der Verkauf vertraulich?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Ja. Wir wissen, wie sensibel dieses Thema ist. Erste Gespräche finden diskret statt, ohne Meldung an Mitarbeitende, Kunden oder Wettbewerber. Erst wenn beide Seiten sicher sind, dass eine Zusammenarbeit sinnvoll ist, gehen wir die nächsten Schritte gemeinsam an."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Ist Vidai im Handelsregister eingetragen?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Noch nicht. Vidai befindet sich aktuell im Aufbau. Sobald eine Einigung mit einem Zielunternehmen erreicht ist, wird Vidai automatisch zur Holding, die das Unternehmen übernimmt. Der rechtliche Rahmen entsteht im Zug der ersten Transaktion, nicht davor."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Wie kontaktiere ich Vidai für eine Firmen Nachfolgeregelung?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Über den Button „Gespräch vereinbaren\" weiter unten können Sie direkt ein unverbindliches Erstgespräch mit Kannan Palani buchen."
-            }
+              "@type": "FAQPage",
+              "@id": "https://vidai.ch/faq.html#faq",
+              "url": "https://vidai.ch/faq.html",
+              "inLanguage": "de",
+              "about": {
+                  "@id": "https://vidai.ch/#organization"
+              },
+              "mainEntity": [
+                  {
+                      "@type": "Question",
+                      "name": "Ich habe keinen familieninternen Nachfolger. Was jetzt?",
+                      "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": "Das ist häufig. Viele Unternehmer haben keine Nachfolge innerhalb der Familie. Vidai bietet eine externe Lösung: eine langfristige Mehrheitsbeteiligung statt eines schnellen Verkaufs an einen strategischen Käufer. Wir übernehmen Verantwortung für das Lebenswerk, die Mitarbeitenden und die Kunden, ohne festes Exit-Datum."
+                      }
+                  },
+                  {
+                      "@type": "Question",
+                      "name": "Was ist Vidai?",
+                      "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": "Vidai ist ein Schweizer Unternehmen für KMU Nachfolgeregelung mit Sitz in der Deutschschweiz. Vidai übernimmt langfristige Mehrheitsbeteiligungen an kleinen und mittleren Unternehmen (AG und GmbH) im Rahmen einer Firmen Nachfolgeregelung, ohne festes Exit-Datum."
+                      }
+                  },
+                  {
+                      "@type": "Question",
+                      "name": "Wer ist Kannan Palani?",
+                      "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": "Kannan Palani ist der Gründer von Vidai. Er verfügt über 27 Jahre Führungserfahrung in globalen Unternehmen, davon 17 Jahre bei The Adecco Group, sowie über ein Jahrzehnt Erfahrung als Angel Investor. Mehr über Kannan Palani unter Team. Er blogt regelmässig unter palani.ch."
+                      }
+                  },
+                  {
+                      "@type": "Question",
+                      "name": "Ist Vidai ein Ein-Personen-Team?",
+                      "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": "Nein. Über die Jahre hat Kannan ein Netzwerk aufgebaut, das Suche, Investitionen, Technology & Back Office sowie Kommunikation mit Mitarbeitenden, Kunden und Lieferanten unterstützt. Sobald eine Transaktion konkret wird, werden gezielt Fachpersonen hinzugezogen: Recht, Finanzen, Treuhand und Branchenwissen, je nach Phase vor oder nach dem Deal. Im Bereich Technology & Back Office unterstützt ihn ein Team in Coimbatore vollzeit, von der Web-Präsenz bis zur Primärrecherche. Bei der eigentlichen Nachfolgeregelung ist diese Unterstützung aus Coimbatore begrenzt, aufgrund der VTV-Anforderungen und der Anforderungen an die deutsche Sprache."
+                      }
+                  },
+                  {
+                      "@type": "Question",
+                      "name": "Für welche Unternehmen eignet sich eine Nachfolgeregelung mit Vidai?",
+                      "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": "Vidai richtet sich an eigentümergeführte AG und GmbH in der Deutschschweiz mit CHF 1–10 Mio. Umsatz, mehr als CHF 200k EBITDA und 5–50 Mitarbeitenden, die eine Nachfolgeregelung suchen. Mehr hier."
+                      }
+                  },
+                  {
+                      "@type": "Question",
+                      "name": "Was bedeutet „Während wir suchen, bauen wir\"?",
+                      "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": "Die Nachfolgesuche ist kein passiver Prozess. Während wir passende Unternehmen suchen, bauen wir eigene Projekte auf. Ein Beispiel ist mulai.ch, unser Modell für Zusammenarbeit und Arbeitsorganisation. Was wir bauen, zeigt, wie wir arbeiten. Und es zeigt, was wir suchen: Unternehmen mit echter Substanz, geführt mit Sorgfalt."
+                      }
+                  },
+                  {
+                      "@type": "Question",
+                      "name": "Wie unterscheidet sich Vidai von Private Equity?",
+                      "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": "Private-Equity-Fonds haben oft ein festes Zeitfenster, meist 3 bis 7 Jahre, danach folgt der Exit. Vidai hat kein festes Exit-Datum. Wir denken in Jahrzehnten, nicht in Fondszyklen. Das Ziel: ein Unternehmen, das auch 10 bis 20 Jahre nach der Übergabe noch stabil dasteht."
+                      }
+                  },
+                  {
+                      "@type": "Question",
+                      "name": "Wie viel Kapital seid ihr bereit zu investieren?",
+                      "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": "Wir haben Kapital für konkrete Transaktionen bis zu einem Unternehmenswert von CHF 7.5 Millionen gesichert. Aktuell suchen wir gezielt nach deutlich kleineren Firmen. Das bedeutet: Wir können über die eigentliche Nachfolge hinaus zusätzliches Kapital ins Unternehmen einbringen, etwa für Wachstum oder Investitionen nach der Übergabe. Ein festes Angebot machen wir erst, wenn ein Business- und Finanzplan steht. Uns ist wichtig: ein guter Exit für den Unternehmer, und dass die Firma auch 10 bis 20 Jahre nach der Übergabe noch stabil dasteht."
+                      }
+                  },
+                  {
+                      "@type": "Question",
+                      "name": "Bleiben die Mitarbeitenden nach der Übernahme?",
+                      "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": "Ja, das ist uns wichtig. Wir kaufen kein Unternehmen, um es zu zerlegen, wir übernehmen es, um es weiterzuführen. Die Mitarbeitenden kennen den Betrieb, die Kunden und die Prozesse, sie sind Teil der Substanz, die wir übernehmen wollen. Wir begrüssen auch mehr Eigentum bei Mitarbeitenden, nicht weniger: Wenn Mitarbeitende bereit sind, das unternehmerische Risiko mitzutragen, ist das für uns ein Vorteil. Veränderung gehört zum Geschäft und zum Leben, nicht alle kommen gleich gut damit zurecht. Für Mitarbeitende, die mit dem Übergang zu kämpfen haben, sorgen wir mit Mitgefühl und Sorgfalt für die nötige Unterstützung."
+                      }
+                  },
+                  {
+                      "@type": "Question",
+                      "name": "Bleibt der Verkauf vertraulich?",
+                      "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": "Ja. Wir wissen, wie sensibel dieses Thema ist. Erste Gespräche finden diskret statt, ohne Meldung an Mitarbeitende, Kunden oder Wettbewerber. Erst wenn beide Seiten sicher sind, dass eine Zusammenarbeit sinnvoll ist, gehen wir die nächsten Schritte gemeinsam an."
+                      }
+                  },
+                  {
+                      "@type": "Question",
+                      "name": "Ist Vidai im Handelsregister eingetragen?",
+                      "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": "Noch nicht. Vidai befindet sich aktuell im Aufbau. Sobald eine Einigung mit einem Zielunternehmen erreicht ist, wird Vidai automatisch zur Holding, die das Unternehmen übernimmt. Der rechtliche Rahmen entsteht im Zug der ersten Transaktion, nicht davor."
+                      }
+                  },
+                  {
+                      "@type": "Question",
+                      "name": "Wie kontaktiere ich Vidai für eine Firmen Nachfolgeregelung?",
+                      "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": "Über den Button „Gespräch vereinbaren\" weiter unten können Sie direkt ein unverbindliches Erstgespräch mit Kannan Palani buchen."
+                      }
+                  }
+              ]
           }
-        ]
-      }
-    ]
+      ]
   }
   </script>
 
@@ -318,150 +336,91 @@
     </div>
 
     <div class="faq-page-list">
-      
+      <!-- FAQ:LIST:START -->
       <div class="faq-item">
         <h2>Ich habe keinen familieninternen Nachfolger. Was jetzt?</h2>
         <p>
-          Das ist häufig. Viele Unternehmer haben keine Nachfolge innerhalb der Familie. 
-          Vidai bietet eine externe Lösung: eine langfristige Mehrheitsbeteiligung statt eines schnellen Verkaufs an einen 
-          strategischen Käufer. Wir übernehmen Verantwortung für das Lebenswerk, die Mitarbeitenden und die Kunden, 
-          ohne festes Exit-Datum.
+          Das ist häufig. Viele Unternehmer haben keine Nachfolge innerhalb der Familie. Vidai bietet eine externe Lösung: eine langfristige Mehrheitsbeteiligung statt eines schnellen Verkaufs an einen strategischen Käufer. Wir übernehmen Verantwortung für das Lebenswerk, die Mitarbeitenden und die Kunden, ohne festes Exit-Datum.
         </p>
       </div>
 
       <div class="faq-item">
         <h2>Was ist Vidai?</h2>
         <p>
-          Vidai ist ein Schweizer Unternehmen für KMU Nachfolge mit
-          Sitz in der Deutschschweiz, ohne festes Exit-Datum.
+          Vidai ist ein Schweizer Unternehmen für KMU Nachfolgeregelung mit Sitz in der Deutschschweiz. Vidai übernimmt langfristige Mehrheitsbeteiligungen an kleinen und mittleren Unternehmen (AG und GmbH) im Rahmen einer Firmen Nachfolgeregelung, ohne festes Exit-Datum.
         </p>
       </div>
 
       <div class="faq-item">
         <h2>Wer ist Kannan Palani?</h2>
         <p>
-          Kannan Palani ist der Gründer von Vidai. Er verfügt über 27 Jahre Führungserfahrung in globalen Unternehmen, 
-          davon 17 Jahre bei The Adecco Group, sowie über ein Jahrzehnt Erfahrung als Angel Investor. 
-          Mehr über Kannan Palani unter <a href="index.html#team"> Team </a> Er blogt regelmässig unter 
-          <a href="https://www.palani.ch/de/blog" rel="noopener">palani.ch</a>.
+          Kannan Palani ist der Gründer von Vidai. Er verfügt über 27 Jahre Führungserfahrung in globalen Unternehmen, davon 17 Jahre bei The Adecco Group, sowie über ein Jahrzehnt Erfahrung als Angel Investor. Mehr über Kannan Palani unter <a href="index.html#team">Team</a>. Er blogt regelmässig unter <a href="https://www.palani.ch/de/blog" rel="noopener">palani.ch</a>.
         </p>
       </div>
 
       <div class="faq-item">
         <h2>Ist Vidai ein Ein-Personen-Team?</h2>
         <p>
-          Nein. Über die Jahre hat Kannan ein Netzwerk aufgebaut, das Suche,
-          Investitionen, Technology &amp; Back Office sowie Kommunikation
-          mit Mitarbeitenden, Kunden und Lieferanten unterstützt. Sobald
-          eine Transaktion konkret wird, werden gezielt Fachpersonen
-          hinzugezogen: Recht, Finanzen, Treuhand und Branchenwissen, je
-          nach Phase vor oder nach dem Deal. Im Bereich Technology &amp;
-          Back Office unterstützt ihn ein Team in Coimbatore vollzeit, von
-          der Web-Präsenz bis zur Primärrecherche. Bei der eigentlichen
-          Nachfolgeregelung ist diese Unterstützung aus Coimbatore
-          begrenzt, aufgrund der VTV-Anforderungen und der Anforderungen
-          an die deutsche Sprache.
+          Nein. Über die Jahre hat Kannan ein Netzwerk aufgebaut, das Suche, Investitionen, Technology &amp; Back Office sowie Kommunikation mit Mitarbeitenden, Kunden und Lieferanten unterstützt. Sobald eine Transaktion konkret wird, werden gezielt Fachpersonen hinzugezogen: Recht, Finanzen, Treuhand und Branchenwissen, je nach Phase vor oder nach dem Deal. Im Bereich Technology &amp; Back Office unterstützt ihn ein Team in Coimbatore vollzeit, von der Web-Präsenz bis zur Primärrecherche. Bei der eigentlichen Nachfolgeregelung ist diese Unterstützung aus Coimbatore begrenzt, aufgrund der VTV-Anforderungen und der Anforderungen an die deutsche Sprache.
         </p>
       </div>
 
       <div class="faq-item">
         <h2>Für welche Unternehmen eignet sich eine Nachfolgeregelung mit Vidai?</h2>
         <p>
-          Vidai richtet sich an eigentümergeführte AG und GmbH in der
-          Deutschschweiz mit CHF 1–10 Mio. Umsatz, mehr als CHF 200k
-          EBITDA und 5–50 Mitarbeitenden, die eine Nachfolgeregelung
-          suchen. Mehr <a href="ziele.html"> hier. </a>
+          Vidai richtet sich an eigentümergeführte AG und GmbH in der Deutschschweiz mit CHF 1–10 Mio. Umsatz, mehr als CHF 200k EBITDA und 5–50 Mitarbeitenden, die eine Nachfolgeregelung suchen. Mehr <a href="ziele.html">hier.</a>
         </p>
       </div>
 
       <div class="faq-item">
         <h2>Was bedeutet „Während wir suchen, bauen wir"?</h2>
         <p>
-          Die Nachfolgesuche ist kein passiver Prozess. Während wir
-          passende Unternehmen suchen, bauen wir eigene Projekte auf. Ein
-          Beispiel ist <a href="https://mulai.ch" target="_blank" rel="noopener">mulai.ch</a>,
-          unser Modell für Zusammenarbeit und Arbeitsorganisation. Was wir
-          bauen, zeigt, wie wir arbeiten. Und es zeigt, was wir suchen:
-          Unternehmen mit echter Substanz, geführt mit Sorgfalt.
+          Die Nachfolgesuche ist kein passiver Prozess. Während wir passende Unternehmen suchen, bauen wir eigene Projekte auf. Ein Beispiel ist <a href="https://mulai.ch" target="_blank" rel="noopener">mulai.ch</a>, unser Modell für Zusammenarbeit und Arbeitsorganisation. Was wir bauen, zeigt, wie wir arbeiten. Und es zeigt, was wir suchen: Unternehmen mit echter Substanz, geführt mit Sorgfalt.
         </p>
       </div>
 
       <div class="faq-item">
         <h2>Wie unterscheidet sich Vidai von Private Equity?</h2>
         <p>
-          Private-Equity-Fonds haben oft ein festes Zeitfenster, meist 3
-          bis 7 Jahre, danach folgt der Exit. Vidai hat kein festes
-          Exit-Datum. Wir denken in Jahrzehnten, nicht in Fondszyklen. Das
-          Ziel: ein Unternehmen, das auch 10 bis 20 Jahre nach der
-          Übergabe noch stabil dasteht.
+          Private-Equity-Fonds haben oft ein festes Zeitfenster, meist 3 bis 7 Jahre, danach folgt der Exit. Vidai hat kein festes Exit-Datum. Wir denken in Jahrzehnten, nicht in Fondszyklen. Das Ziel: ein Unternehmen, das auch 10 bis 20 Jahre nach der Übergabe noch stabil dasteht.
         </p>
       </div>
 
       <div class="faq-item">
         <h2>Wie viel Kapital seid ihr bereit zu investieren?</h2>
         <p>
-          Das hängt vom Unternehmen ab. Zwei Fragen sind entscheidend: Wie
-          gut erwirtschaftet das Unternehmen langfristig Cashflow? Und wie
-          stark hängt der Erfolg vom Eigentümer selbst ab, lässt sich das
-          auf eine neue Führung übertragen? Wir bringen eigenes Kapital
-          ein, im Ziel 40% des Unternehmenswerts. Ist mehr Kapital nötig,
-          holen wir externe Investoren dazu. Meist nehmen wir auch einen
-          Bankkredit auf, das Hurdle-Rate-System der Banken schätzen wir
-          als robuste zweite Einschätzung. Ein festes Angebot machen wir
-          erst, wenn ein Business- und Finanzplan steht. Uns ist wichtig:
-          ein guter Exit für den Unternehmer, und dass die Firma auch 10
-          bis 20 Jahre nach der Übergabe noch stabil dasteht.
+          Wir haben Kapital für konkrete Transaktionen bis zu einem Unternehmenswert von CHF 7.5 Millionen gesichert. Aktuell suchen wir gezielt nach deutlich kleineren Firmen. Das bedeutet: Wir können über die eigentliche Nachfolge hinaus zusätzliches Kapital ins Unternehmen einbringen, etwa für Wachstum oder Investitionen nach der Übergabe. Ein festes Angebot machen wir erst, wenn ein Business- und Finanzplan steht. Uns ist wichtig: ein guter Exit für den Unternehmer, und dass die Firma auch 10 bis 20 Jahre nach der Übergabe noch stabil dasteht.
         </p>
       </div>
 
       <div class="faq-item">
         <h2>Bleiben die Mitarbeitenden nach der Übernahme?</h2>
         <p>
-          Ja, das ist uns wichtig. Wir kaufen kein Unternehmen, um es zu
-          zerlegen, wir übernehmen es, um es weiterzuführen. Die
-          Mitarbeitenden kennen den Betrieb, die Kunden und die Prozesse,
-          sie sind Teil der Substanz, die wir übernehmen wollen. Wir
-          begrüssen auch mehr Eigentum bei Mitarbeitenden, nicht weniger:
-          Wenn Mitarbeitende bereit sind, das unternehmerische Risiko
-          mitzutragen, ist das für uns ein Vorteil. Veränderung gehört zum
-          Geschäft und zum Leben, nicht alle kommen gleich gut damit
-          zurecht. Für Mitarbeitende, die mit dem Übergang zu kämpfen
-          haben, sorgen wir mit Mitgefühl und Sorgfalt für die nötige
-          Unterstützung.
+          Ja, das ist uns wichtig. Wir kaufen kein Unternehmen, um es zu zerlegen, wir übernehmen es, um es weiterzuführen. Die Mitarbeitenden kennen den Betrieb, die Kunden und die Prozesse, sie sind Teil der Substanz, die wir übernehmen wollen. Wir begrüssen auch mehr Eigentum bei Mitarbeitenden, nicht weniger: Wenn Mitarbeitende bereit sind, das unternehmerische Risiko mitzutragen, ist das für uns ein Vorteil. Veränderung gehört zum Geschäft und zum Leben, nicht alle kommen gleich gut damit zurecht. Für Mitarbeitende, die mit dem Übergang zu kämpfen haben, sorgen wir mit Mitgefühl und Sorgfalt für die nötige Unterstützung.
         </p>
       </div>
 
       <div class="faq-item">
         <h2>Bleibt der Verkauf vertraulich?</h2>
         <p>
-          Ja. Wir wissen, wie sensibel dieses Thema ist. Erste Gespräche
-          finden diskret statt, ohne Meldung an Mitarbeitende, Kunden oder
-          Wettbewerber. Erst wenn beide Seiten sicher sind, dass eine
-          Zusammenarbeit sinnvoll ist, gehen wir die nächsten Schritte
-          gemeinsam an.
+          Ja. Wir wissen, wie sensibel dieses Thema ist. Erste Gespräche finden diskret statt, ohne Meldung an Mitarbeitende, Kunden oder Wettbewerber. Erst wenn beide Seiten sicher sind, dass eine Zusammenarbeit sinnvoll ist, gehen wir die nächsten Schritte gemeinsam an.
         </p>
       </div>
 
       <div class="faq-item">
         <h2>Ist Vidai im Handelsregister eingetragen?</h2>
         <p>
-          Noch nicht. Vidai befindet sich aktuell im Aufbau. Sobald eine
-          Einigung mit einem Zielunternehmen erreicht ist, wird Vidai
-          automatisch zur Holding, die das Unternehmen übernimmt. Der
-          rechtliche Rahmen entsteht im Zug der ersten Transaktion, nicht
-          davor.
+          Noch nicht. Vidai befindet sich aktuell im Aufbau. Sobald eine Einigung mit einem Zielunternehmen erreicht ist, wird Vidai automatisch zur Holding, die das Unternehmen übernimmt. Der rechtliche Rahmen entsteht im Zug der ersten Transaktion, nicht davor.
         </p>
       </div>
 
       <div class="faq-item">
         <h2>Wie kontaktiere ich Vidai für eine Firmen Nachfolgeregelung?</h2>
         <p>
-          Über den Button „Gespräch vereinbaren" weiter unten können
-          Sie direkt ein unverbindliches Erstgespräch mit Kannan Palani
-          buchen.
+          Über den Button „Gespräch vereinbaren" weiter unten können Sie direkt ein unverbindliches Erstgespräch mit Kannan Palani buchen.
         </p>
       </div>
-
+      <!-- FAQ:LIST:END -->
     </div>
 
     <div class="faq-back-cta">
