@@ -2,4 +2,5 @@
 # Lines starting with # are ignored. Add/remove/reorder lines to change what shows.
 https://www.palani.ch/de/post/übergang
 https://www.palani.ch/de/post/sichtbar
-https://www.palani.ch/de/post/vidai-1
+https://www.palani.ch/de/post/vidai-
+https://www.palani.ch/de/post/mulai
